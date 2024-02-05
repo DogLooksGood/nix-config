@@ -7,5 +7,5 @@
 
   home.file = {
     ".config/containers".source = /${files}/containers;
-  }
+  };
 }

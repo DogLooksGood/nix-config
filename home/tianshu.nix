@@ -1,10 +1,11 @@
-{ modules }:
+{ modules, ... }:
 {
   imports = [
-    /${modules}/rime
-    /${modules}/shell
-    /${modules}/podman
-    /${modules}/emacs
+    /${modules}/rime.nix
+    /${modules}/shell.nix
+    /${modules}/podman.nix
+    /${modules}/emacs.nix
+    /${modules}/apps.nix
   ];
 
   home.username = "tianshu";

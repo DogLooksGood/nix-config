@@ -1,7 +1,7 @@
 { pkgs, files, ... }:
 {
   home.packages = with pkgs; [
-    limerime
+    librime
   ];
 
   home.file = {

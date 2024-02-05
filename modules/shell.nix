@@ -23,9 +23,16 @@
     usbutils
     android-tools
     htop
+    git
   ];
 
   home.file = {
     ".config/zellij".source = /${files}/zellij;
+  };
+
+  programs.git = {
+    enable = true;
+    userEmail = "doglooksgood@gmail.com";
+    userName = "DogLooksGood";
   };
 }

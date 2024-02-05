@@ -38,7 +38,7 @@
 
       homeConfigurations = (
         import ./home {
-          inherit nixpkgs nixpkgs-unstable inputs home-manager;
+          inherit nixpkgs nixpkgs-unstable home-manager files modules;
         }
       );
     };
