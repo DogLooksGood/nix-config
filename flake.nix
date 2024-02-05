@@ -11,8 +11,6 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    flake-utils = { url = "github:numtide/flake-utils"; };
-
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,28 +23,24 @@
 
   };
 
-  outputs = inputs@{ self, home-manager, nixpkgs, flake-utils }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, ... }:
     let
       nixpkgs.config.allowUnfree = true;
-      user = "tianshu";
       files = ./files;
       modules = ./modules;
     in
-    {
-      nixosConfigurations = {
-        tianshu-laptop = nixpkgs.lib.nixosSystem {
-          pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          specialArgs = { inherit inputs nixpkgs };
-          modules = [ ./hosts/laptop.nix ];
-        };
-      };
+      {
+        nixosConfigurations = (import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit nixpkgs nixpkgs-unstable inputs;
+        });
 
-      homeConfigurations = {
-        tianshu = home-manager.lib.homeManagerConfiguration {
-          inherit nixpkgs nixpkgs-unstable;
-          extraSpecialArgs = { inherit inputs nixpkgs files };
-          modules = [ ./users/tianshu.nix ];
+        homeConfigurations = {
+          tianshu = home-manager.lib.homeManagerConfiguration {
+            inherit nixpkgs nixpkgs-unstable;
+            extraSpecialArgs = { inherit inputs nixpkgs files; };
+            modules = [ ./home/home.nix ];
+          };
         };
       };
-    }
 }
