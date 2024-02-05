@@ -21,25 +21,28 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, flake-utils, ... }:
     let
       files = ./files;
       modules = ./modules;
     in
-    {
-      nixosConfigurations = (
-        import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-unstable inputs home-manager;
-        }
-      );
+      {
+        imports = [ ./shell.nix ];
 
-      homeConfigurations = (
-        import ./home {
-          inherit nixpkgs nixpkgs-unstable home-manager files modules;
-        }
-      );
-    };
+        nixosConfigurations = (
+          import ./hosts {
+            inherit (nixpkgs) lib;
+            inherit nixpkgs nixpkgs-unstable inputs home-manager;
+          }
+        );
+
+        homeConfigurations = (
+          import ./home {
+            inherit nixpkgs nixpkgs-unstable home-manager files modules;
+          }
+        );
+      };
 }

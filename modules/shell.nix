@@ -6,7 +6,6 @@
     ripgrep
     mosh
     zellij
-    rnix-lsp
     babashka
     curl
     unzip
