@@ -1,0 +1,85 @@
+﻿# Rime schema settings
+# encoding: utf-8
+
+schema:
+  schema_id: xklbdz
+  name: 中文-星空两笔单字
+  version: "1.1"
+  author:
+    - 发明人 大牛
+  # dependencies:
+  #   - pinyin_simp
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 西文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - table_translator
+    - reverse_lookup_translator
+
+speller:
+  auto_select: true
+  auto_select_unique_candidate: false
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba'
+  initials: 'abcdefghijklmnopqrstuvwxyz'
+
+translator:
+  dictionary: xklbdz.extended
+  enable_charset_filter: false
+  enable_completion: true
+  enable_encoder: true
+  enable_sentence: false
+  enable_user_dict: false
+  encode_commit_history: true
+  max_code_length: 6
+  max_phrase_length: 6
+
+reverse_lookup:
+  dictionary: pinyin_simp
+  prefix: "i"
+  tips: 拼音
+  comment_format:
+    - xform/^/〔/
+    - xform/$/〕/
+
+menu:
+  page_size: 5
+
+punctuator:
+  import_preset: symbols
+
+key_binder:
+  import_preset: default
+  bindings:
+    - {accept: "Control+p", send: Page_Up, when: has_menu}
+    - {accept: "Control+n", send: Page_Down, when: has_menu}
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "i+[a-z]*$"
+    punct: "^/([0-9]0?|[a-z]+)$"
+    retention: "^[bpmfdtnlgkhjqxzscrywv][a-z][aeiou]{0, 3}"
