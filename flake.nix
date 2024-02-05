@@ -29,20 +29,14 @@
       files = ./files;
       modules = ./modules;
     in
-      {
-        imports = [ ./shell.nix ];
-
-        nixosConfigurations = (
-          import ./hosts {
-            inherit (nixpkgs) lib;
-            inherit nixpkgs nixpkgs-unstable inputs home-manager;
-          }
-        );
-
-        homeConfigurations = (
-          import ./home {
-            inherit nixpkgs nixpkgs-unstable home-manager files modules;
-          }
-        );
+    {
+      nixosConfigurations = import ./hosts {
+        inherit (nixpkgs) lib;
+        inherit nixpkgs nixpkgs-unstable inputs home-manager;
       };
+
+      homeConfigurations = import ./home {
+        inherit nixpkgs nixpkgs-unstable home-manager files modules;
+      };
+    } // import ./shell.nix { inherit nixpkgs flake-utils; };
 }

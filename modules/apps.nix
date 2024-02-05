@@ -11,4 +11,6 @@
     libreoffice-fresh
     mindustry
   ];
+
+  fonts.fontconfig.enable = true;
 }
