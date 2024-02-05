@@ -25,22 +25,21 @@
 
   outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, ... }:
     let
-      nixpkgs.config.allowUnfree = true;
       files = ./files;
       modules = ./modules;
     in
-      {
-        nixosConfigurations = (import ./hosts {
+    {
+      nixosConfigurations = (
+        import ./hosts {
           inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-unstable inputs;
-        });
+          inherit nixpkgs nixpkgs-unstable inputs home-manager;
+        }
+      );
 
-        homeConfigurations = {
-          tianshu = home-manager.lib.homeManagerConfiguration {
-            inherit nixpkgs nixpkgs-unstable;
-            extraSpecialArgs = { inherit inputs nixpkgs files; };
-            modules = [ ./home/home.nix ];
-          };
-        };
-      };
+      homeConfigurations = (
+        import ./home {
+          inherit nixpkgs nixpkgs-unstable inputs home-manager;
+        }
+      );
+    };
 }

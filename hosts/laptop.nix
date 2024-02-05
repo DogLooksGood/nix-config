@@ -1,15 +1,9 @@
-{ config, nixpkgs, inputs }:
-let
-
-  pkgs = import nixpkgs {
-    inherit config;
-    system = "x86_64-linux";
-  };
-in
+{ config, pkgs, unstable, system, lib, home-manager, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   fonts.packages = with pkgs; [
@@ -21,6 +15,7 @@ in
   qt = {
     enable = true;
     platformTheme = "gnome";
+    style = "adwaita-dark";
   };
 
   # Use Fcitx5 input method
@@ -128,9 +123,6 @@ in
   # Enable zsh shell
   programs.zsh.enable = true;
 
-  # Enable Home Manager
-  programs.home-manager.enable = true;
-
   # No password for sudo
   security.sudo.wheelNeedsPassword = false;
 
@@ -139,12 +131,6 @@ in
     isNormalUser = true;
     shell = pkgs.zsh;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      libsForQt5.qt5ct
-      powertop
-      firefox
-      tree
-    ];
   };
 
   # List packages installed in system profile. To search, run:
