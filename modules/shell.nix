@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     pass
     simple-http-server
+    nixd
     ripgrep
     mosh
     zellij

@@ -22,9 +22,14 @@
     };
 
     flake-utils.url = "github:numtide/flake-utils";
+
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, flake-utils, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, flake-utils, emacs-overlay, ... }:
     let
       files = ./files;
       modules = ./modules;
@@ -36,7 +41,7 @@
       };
 
       homeConfigurations = import ./home {
-        inherit nixpkgs nixpkgs-unstable home-manager files modules;
+        inherit nixpkgs nixpkgs-unstable home-manager files modules emacs-overlay;
       };
     } // import ./shell.nix { inherit nixpkgs flake-utils; };
 }

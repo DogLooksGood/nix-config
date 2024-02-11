@@ -6,6 +6,14 @@
       <home-manager/nixos>
     ];
 
+  nix = {
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
+    '';
+  };
+
   fonts.packages = with pkgs; [
     lmodern
     symbola
@@ -136,6 +144,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    adw-gtk3
     home-manager
     gnomeExtensions.kimpanel
     yubikey-personalization
@@ -152,6 +161,8 @@
   '';
 
   virtualisation.waydroid.enable = true;
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "tianshu" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

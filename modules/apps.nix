@@ -10,6 +10,7 @@
     pinentry
     libreoffice-fresh
     mindustry
+    vlc
   ];
 
   fonts.fontconfig.enable = true;
