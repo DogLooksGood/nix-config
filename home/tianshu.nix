@@ -6,6 +6,7 @@
     /${modules}/podman.nix
     /${modules}/emacs.nix
     /${modules}/apps.nix
+    /${modules}/web3.nix
   ];
 
   home.username = "tianshu";
