@@ -34,14 +34,14 @@
       files = ./files;
       modules = ./modules;
     in
-    {
-      nixosConfigurations = import ./hosts {
-        inherit (nixpkgs) lib;
-        inherit nixpkgs nixpkgs-unstable inputs home-manager;
-      };
+      {
+        nixosConfigurations = import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit nixpkgs nixpkgs-unstable inputs home-manager;
+        };
 
-      homeConfigurations = import ./home {
-        inherit nixpkgs nixpkgs-unstable home-manager files modules emacs-overlay;
-      };
-    } // import ./shell.nix { inherit nixpkgs flake-utils; };
+        homeConfigurations = import ./home {
+          inherit nixpkgs nixpkgs-unstable home-manager files modules emacs-overlay;
+        };
+      } // import ./shell.nix { inherit nixpkgs flake-utils; };
 }

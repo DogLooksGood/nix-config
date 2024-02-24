@@ -13,6 +13,8 @@
     drawio
     vivaldi
     vivaldi-ffmpeg-codecs
+    inkscape
+    ungoogled-chromium
   ];
 
   fonts.fontconfig.enable = true;

@@ -147,6 +147,8 @@
     adw-gtk3
     home-manager
     gnomeExtensions.kimpanel
+    gnomeExtensions.color-picker
+    gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
     yubikey-personalization
     nano
     gnome3.gnome-tweaks

@@ -24,6 +24,7 @@
     android-tools
     htop
     git
+    gcc
   ];
 
   home.file = {
@@ -55,6 +56,7 @@
     };
     profileExtra = ''
       export FZF_DEFAULT_OPTS="--color bw"
+      export EDITOR=emacsclient
 
       LOCAL_RC=$HOME/.zshrc
       if [ -f "$LOCAL_RC" ]; then
