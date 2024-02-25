@@ -25,6 +25,7 @@
     htop
     git
     gcc
+    comma
   ];
 
   home.file = {
