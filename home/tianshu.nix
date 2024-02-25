@@ -7,6 +7,7 @@
     /${modules}/emacs.nix
     /${modules}/apps.nix
     /${modules}/web3.nix
+    /${modules}/devtools.nix
   ];
 
   home.username = "tianshu";

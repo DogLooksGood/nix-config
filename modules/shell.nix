@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     pass
     simple-http-server
-    nixd
     ripgrep
     mosh
     zellij
@@ -18,13 +17,11 @@
     jet
     p7zip
     qrencode
-    gnumake
     httpie
     usbutils
     android-tools
     htop
     git
-    gcc
     comma
   ];
 
