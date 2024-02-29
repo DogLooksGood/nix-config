@@ -22,6 +22,7 @@
     android-tools
     htop
     git
+    ventoy
     comma
   ];
 

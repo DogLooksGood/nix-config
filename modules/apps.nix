@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     telegram-desktop
     discord
-    freetube
+    unstable.freetube
     blackbox-terminal
     unstable.firefox
     pinentry
@@ -15,6 +15,8 @@
     vivaldi-ffmpeg-codecs
     inkscape
     ungoogled-chromium
+    godot_4
+    libresprite
   ];
 
   fonts.fontconfig.enable = true;

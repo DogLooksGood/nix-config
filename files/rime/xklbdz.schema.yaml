@@ -7,8 +7,8 @@ schema:
   version: "1.1"
   author:
     - 发明人 大牛
-  # dependencies:
-  #   - pinyin_simp
+  dependencies:
+    - pinyin_simp
 
 switches:
   - name: ascii_mode
@@ -72,10 +72,9 @@ punctuator:
   import_preset: symbols
 
 key_binder:
-  import_preset: default
   bindings:
-    - {accept: "Control+p", send: Page_Up, when: has_menu}
-    - {accept: "Control+n", send: Page_Down, when: has_menu}
+    - { accept: "Control+p", send: Page_Up, when: has_menu}
+    - { accept: "Control+n", send: Page_Down, when: has_menu}
 
 recognizer:
   import_preset: default
