@@ -37,7 +37,7 @@
       {
         nixosConfigurations = import ./hosts {
           inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-unstable inputs home-manager;
+          inherit nixpkgs nixpkgs-unstable inputs home-manager modules;
         };
 
         homeConfigurations = import ./home {

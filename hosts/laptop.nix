@@ -1,9 +1,10 @@
-{ config, pkgs, unstable, system, lib, home-manager, ... }:
+{ config, pkgs, unstable, system, lib, home-manager, modules, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
       <home-manager/nixos>
+      /${modules}/gnome.nix
     ];
 
   nix = {
@@ -20,11 +21,7 @@
     lxgw-wenkai
   ];
 
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = "adwaita-dark";
-  };
+  qt.enable = true;
 
   # Use Fcitx5 input method
   i18n.inputMethod = {
@@ -60,38 +57,11 @@
   # };
 
   services.fprintd.enable = true;
-  security.pam.services.login.fprintAuth = false;
-  # similarly to how other distributions handle the fingerprinting login
-  security.pam.services.gdm-fingerprint = lib.mkIf (config.services.fprintd.enable) {
-    text = ''
-        auth       required                    pam_shells.so
-        auth       requisite                   pam_nologin.so
-        auth       requisite                   pam_faillock.so      preauth
-        auth       required                    ${pkgs.fprintd}/lib/security/pam_fprintd.so
-        auth       optional                    pam_permit.so
-        auth       required                    pam_env.so
-        auth       [success=ok default=1]      ${pkgs.gnome.gdm}/lib/security/pam_gdm.so
-        auth       optional                    ${pkgs.gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so
-
-        account    include                     login
-
-        password   required                    pam_deny.so
-
-        session    include                     login
-        session    optional                    ${pkgs.gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
-    '';
-  };
 
   services.v2raya.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -146,12 +116,8 @@
   environment.systemPackages = with pkgs; [
     adw-gtk3
     home-manager
-    gnomeExtensions.kimpanel
-    gnomeExtensions.color-picker
-    gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
     yubikey-personalization
     nano
-    gnome3.gnome-tweaks
     git
     gnupg
     wget
