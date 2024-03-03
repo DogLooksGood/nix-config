@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, nixpkgs-unstable, lib, home-manager, modules, ... }:
+{ inputs, nixpkgs, nixpkgs-unstable, lib, home-manager, modules, nixos-wsl, ... }:
 let
   system = "x86_64-linux";
 
@@ -21,7 +21,7 @@ in
 
   tianshu-wsl = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit system pkgs unstable lib home-manager modules; };
+    specialArgs = { inherit system pkgs unstable lib home-manager modules nixos-wsl; };
     modules = [ ./wsl.nix ];
   };
 }

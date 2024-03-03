@@ -31,7 +31,7 @@
     };
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, flake-utils, emacs-overlay, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, flake-utils, emacs-overlay, nixos-wsl, ... }:
     let
       files = ./files;
       modules = ./modules;
@@ -45,5 +45,5 @@
         homeConfigurations = import ./home {
           inherit nixpkgs nixpkgs-unstable home-manager files modules emacs-overlay;
         };
-      } // import ./shell.nix { inherit nixpkgs flake-utils; };
+      };
 }
