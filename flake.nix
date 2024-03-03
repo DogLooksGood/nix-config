@@ -21,6 +21,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+
     flake-utils.url = "github:numtide/flake-utils";
 
     flake-compat = {
@@ -37,7 +39,7 @@
       {
         nixosConfigurations = import ./hosts {
           inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-unstable inputs home-manager modules;
+          inherit nixpkgs nixpkgs-unstable inputs home-manager modules nixos-wsl;
         };
 
         homeConfigurations = import ./home {

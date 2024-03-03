@@ -1,7 +1,8 @@
-{ config, pkgs, unstable, system, lib, home-manager, modules, ... }:
+{ config, pkgs, unstable, system, lib, home-manager, modules, nixos-wsl, ... }:
 {
   imports =
     [
+      (import "${nixos-wsl/modules}")
       (import "${home-manager}/nixos")
     ];
 
