@@ -3,7 +3,7 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      <home-manager/nixos>
+      (import "${home-manager}/nixos")
       /${modules}/gnome.nix
     ];
 

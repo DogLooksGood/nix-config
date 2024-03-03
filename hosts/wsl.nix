@@ -2,7 +2,7 @@
 {
   imports =
     [
-      <home-manager/nixos>
+      (import "${home-manager}/nixos")
     ];
 
   nix = {
