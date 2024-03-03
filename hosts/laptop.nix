@@ -1,7 +1,7 @@
-{ config, pkgs, unstable, system, lib, home-manager, modules, ... }:
+{ config, pkgs, unstable, system, lib, home-manager, modules, hardware-configuration, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       /etc/nixos/hardware-configuration.nix
       home-manager.nixosModules.home-manager
       /${modules}/gnome.nix
