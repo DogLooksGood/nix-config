@@ -18,4 +18,10 @@ in
     specialArgs = { inherit system pkgs unstable lib home-manager modules; };
     modules = [ ./laptop.nix ];
   };
+
+  tianshu-wsl = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit system pkgs unstable lib home-manager modules; };
+    modules = [ ./wsl.nix ];
+  };
 }
