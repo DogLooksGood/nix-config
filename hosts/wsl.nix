@@ -2,8 +2,8 @@
 {
   imports =
     [
-      (import "${nixos-wsl/modules}")
-      (import "${home-manager}/nixos")
+      nixos-wsl.nixosModules.wsl
+      home-manager.nixosModules.home-manager
     ];
 
   nix = {
