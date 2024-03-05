@@ -6,6 +6,7 @@
     unstable.freetube
     blackbox-terminal
     unstable.firefox
+    unstable.rnote
     pinentry
     libreoffice-fresh
     mindustry
