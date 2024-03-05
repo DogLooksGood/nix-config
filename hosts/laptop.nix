@@ -19,6 +19,7 @@
     lmodern
     symbola
     lxgw-wenkai
+    unstable.ibm-plex
   ];
 
   qt.enable = true;
