@@ -5,10 +5,14 @@ set -e
 TARGET=$1
 
 case "$TARGET" in
-    nixos)
+    all|a)
+        nixos-rebuild switch --use-remote-sudo --impure --flake .
+        home-manager switch --flake . -b backup
+        ;;
+    nixos|n)
         nixos-rebuild switch --use-remote-sudo --impure --flake .
         ;;
-    home-manager)
+    home-manager|h)
         home-manager switch --flake . -b backup
         ;;
 esac
