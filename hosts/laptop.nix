@@ -4,7 +4,6 @@
     [
       /etc/nixos/hardware-configuration.nix
       home-manager.nixosModules.home-manager
-      /${modules}/gnome.nix
     ];
 
   nix = {
@@ -19,6 +18,7 @@
     lmodern
     symbola
     lxgw-wenkai
+    lxgw-neoxihei
     unstable.ibm-plex
   ];
 
@@ -69,15 +69,6 @@
   services.xserver.xkb.variant = "dvp";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Power management
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-  };
-
-  # CPU performance scaling
-  services.thermald.enable = true;
-
   services.tlp = {
     enable = true;
     settings = {
@@ -85,6 +76,10 @@
       CPU_BOOST_ON_BAT = 0;
       CPU_SCALING_GOVERNOR_ON_AC = "performance";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      CPU_MIN_PERF_ON_AC = 0;
+      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MIN_PERF_ON_BAT = 0;
+      CPU_MAX_PERF_ON_BAT = 20;
     };
   };
   services.power-profiles-daemon.enable = false;

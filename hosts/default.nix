@@ -7,7 +7,7 @@ let
     config.allowUnfree = true;
   };
 
-  unstable = import nixpkgs {
+  unstable = import nixpkgs-unstable {
     inherit system;
     config.allowUnfree = true;
   };
@@ -16,7 +16,7 @@ in
   tianshu-laptop = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit system pkgs unstable lib home-manager modules; };
-    modules = [ ./laptop.nix ];
+    modules = [ ./laptop.nix /${modules}/gnome.nix];
   };
 
   tianshu-wsl = lib.nixosSystem {

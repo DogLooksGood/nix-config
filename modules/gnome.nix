@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, unstable, lib, ... }:
 {
 
   # Enable the GNOME Desktop Environment.
@@ -37,5 +37,10 @@
     gnomeExtensions.color-picker
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
     gnome3.gnome-tweaks
+    unstable.qadwaitadecorations-qt6
   ];
+
+  environment.shellInit = ''
+    export QT_WAYLAND_DECORATION=adwaita
+  '';
 }

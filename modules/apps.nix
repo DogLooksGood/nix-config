@@ -18,6 +18,7 @@
     ungoogled-chromium
     godot_4
     libresprite
+    libwacom
   ];
 
   fonts.fontconfig.enable = true;
