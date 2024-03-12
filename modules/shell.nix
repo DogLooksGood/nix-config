@@ -1,4 +1,4 @@
-{ config, pkgs, files, ... }:
+{ config, pkgs, root, ... }:
 {
   home.packages = with pkgs; [
     pass
@@ -24,10 +24,11 @@
     git
     ventoy
     comma
+    nixpkgs-fmt
   ];
 
   home.file = {
-    ".config/zellij".source = /${files}/zellij;
+    ".config/zellij".source = /${root}/files/zellij;
   };
 
   programs.git = {

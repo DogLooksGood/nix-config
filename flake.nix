@@ -3,13 +3,12 @@
 
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
-    # substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
   };
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -31,19 +30,14 @@
     };
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-unstable, flake-utils, emacs-overlay, nixos-wsl, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, flake-utils, emacs-overlay, nixos-wsl, ... }:
     let
-      files = ./files;
-      modules = ./modules;
+      root = ./.;
     in
-      {
-        nixosConfigurations = import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-unstable inputs home-manager modules nixos-wsl;
-        };
-
-        homeConfigurations = import ./home {
-          inherit nixpkgs nixpkgs-unstable home-manager files modules emacs-overlay;
-        };
+    {
+      nixosConfigurations = import ./hosts {
+        inherit (nixpkgs) lib;
+        inherit nixpkgs nixpkgs-stable inputs root home-manager nixos-wsl;
       };
+    };
 }

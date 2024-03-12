@@ -1,9 +1,8 @@
-{ config, pkgs, unstable, system, lib, home-manager, modules, hardware-configuration, ... }:
+{ config, pkgs, system, lib, hardware-configuration, ... }:
 {
   imports =
     [
       /etc/nixos/hardware-configuration.nix
-      home-manager.nixosModules.home-manager
     ];
 
   nix = {
@@ -19,7 +18,7 @@
     symbola
     lxgw-wenkai
     lxgw-neoxihei
-    unstable.ibm-plex
+    ibm-plex
   ];
 
   qt.enable = true;
@@ -110,13 +109,14 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    mg
     adw-gtk3
     home-manager
     yubikey-personalization
-    nano
     git
     gnupg
     wget
+    firefox
   ];
 
   environment.shellInit = ''
@@ -125,8 +125,8 @@
   '';
 
   virtualisation.waydroid.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "tianshu" ];
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = [ "tianshu" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

@@ -1,6 +1,6 @@
-{ config, unstable, files, ... }:
+{ config, files, pkgs, ... }:
 {
-  home.packages = [
-    unstable.solana-cli
+  home.packages = with pkgs; [
+    solana-cli
   ];
 }

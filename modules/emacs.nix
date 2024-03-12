@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    emacs-unstable-pgtk
+    emacs29-pgtk
   ];
 }

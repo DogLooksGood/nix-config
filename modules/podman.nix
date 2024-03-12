@@ -1,4 +1,4 @@
-{ pkgs, files, ... }:
+{ pkgs, root, ... }:
 {
   home.packages = with pkgs; [
     podman
@@ -6,6 +6,6 @@
   ];
 
   home.file = {
-    ".config/containers".source = /${files}/containers;
+    ".config/containers".source = /${root}/files/containers;
   };
 }

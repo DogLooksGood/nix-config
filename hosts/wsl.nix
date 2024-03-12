@@ -1,4 +1,4 @@
-{ config, pkgs, unstable, system, lib, home-manager, modules, nixos-wsl, ... }:
+{ config, pkgs, stable, system, lib, home-manager, modules, nixos-wsl, ... }:
 {
   imports =
     [

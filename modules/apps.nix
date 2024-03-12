@@ -1,15 +1,14 @@
-{ pkgs, unstable, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     telegram-desktop
     discord
-    unstable.freetube
+    freetube
     blackbox-terminal
-    unstable.firefox
-    unstable.rnote
+    firefox
+    rnote
     pinentry
     libreoffice-fresh
-    mindustry
     vlc
     drawio
     vivaldi
@@ -19,7 +18,12 @@
     godot_4
     libresprite
     libwacom
+    scrcpy
   ];
+
+  home.sessionVariables = {
+    SDL_VIDEODRIVER = "wayland";
+  };
 
   fonts.fontconfig.enable = true;
 }

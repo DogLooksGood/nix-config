@@ -1,14 +1,16 @@
-{ modules, ... }:
+{ root, pkgs, ... }:
 {
   imports = [
-    /${modules}/rime.nix
-    /${modules}/shell.nix
-    /${modules}/podman.nix
-    /${modules}/emacs.nix
-    /${modules}/apps.nix
-    /${modules}/web3.nix
-    /${modules}/devtools.nix
+    /${root}/modules/rime.nix
+    /${root}/modules/shell.nix
+    /${root}/modules/podman.nix
+    /${root}/modules/emacs.nix
+    /${root}/modules/apps.nix
+    /${root}/modules/web3.nix
+    /${root}/modules/devtools.nix
   ];
+
+  home.enableNixpkgsReleaseCheck = false;
 
   home.username = "tianshu";
   home.homeDirectory = "/home/tianshu";
