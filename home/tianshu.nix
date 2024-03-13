@@ -10,8 +10,6 @@
     /${root}/modules/devtools.nix
   ];
 
-  home.enableNixpkgsReleaseCheck = false;
-
   home.username = "tianshu";
   home.homeDirectory = "/home/tianshu";
   home.stateVersion = "23.11";

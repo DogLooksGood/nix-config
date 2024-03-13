@@ -20,7 +20,7 @@ in
     modules = [
       ./laptop.nix
 
-      /${root}/desktops/gnome.nix
+      /${root}/desktops/kde.nix
 
       hm {
         home-manager.useGlobalPkgs = true;
@@ -34,7 +34,17 @@ in
 
   tianshu-wsl = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit system pkgs stable lib home-manager nixos-wsl; };
-    modules = [ ./wsl.nix ];
+    specialArgs = { inherit system pkgs stable lib nixos-wsl; };
+    modules = [
+      ./wsl.nix
+
+      hm {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.tianshu = import /${root}/home/tianshu.nix;
+
+        home-manager.extraSpecialArgs = { inherit root; };
+      }
+    ];
   };
 }
