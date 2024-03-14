@@ -15,10 +15,8 @@
 
   fonts.packages = with pkgs; [
     lmodern
-    symbola
     lxgw-wenkai
-    lxgw-neoxihei
-    ibm-plex
+    symbola
   ];
 
   qt.enable = true;
