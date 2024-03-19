@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    xray
     telegram-desktop
     discord
     freetube

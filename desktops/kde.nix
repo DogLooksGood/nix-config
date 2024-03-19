@@ -2,13 +2,14 @@
 {
   services.xserver.enable = true;
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
-  services.xserver.desktopManager.plasma6.notoPackage = pkgs.noto-fonts-lgc-plus;
+  services.desktopManager.plasma6.notoPackage = pkgs.noto-fonts-lgc-plus;
 
   environment.systemPackages = with pkgs; [
     kdePackages.qtwebengine
     kdePackages.qtwebview
+    wezterm
   ];
 
   hardware.bluetooth.enable = true;

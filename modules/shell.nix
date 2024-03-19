@@ -47,7 +47,7 @@
     enable = true;
     dotDir = ".config/zsh";
     enableCompletion = true;
-    enableAutosuggestions = false;
+    autosuggestion.enable = false;
     shellAliases = {
       z = "zellij --layout $HOME/.config/zellij/layout.kdl";
       zt = "zellij action new-tab --cwd . --layout";
