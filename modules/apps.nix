@@ -5,7 +5,6 @@
     telegram-desktop
     discord
     freetube
-    blackbox-terminal
     firefox
     rnote
     pinentry
@@ -20,6 +19,8 @@
     libresprite
     libwacom
     scrcpy
+    qbittorrent
+    xournalpp
   ];
 
   home.sessionVariables = {

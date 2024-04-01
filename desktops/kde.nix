@@ -6,6 +6,8 @@
 
   services.desktopManager.plasma6.notoPackage = pkgs.noto-fonts-lgc-plus;
 
+  programs.gnupg.agent.pinentryPackage = lib.mkForce pkgs.pinentry-qt;
+
   environment.systemPackages = with pkgs; [
     kdePackages.qtwebengine
     kdePackages.qtwebview

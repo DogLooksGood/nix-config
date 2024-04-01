@@ -20,7 +20,7 @@ in
     modules = [
       ./laptop.nix
 
-      /${root}/desktops/kde.nix
+      /${root}/desktops/gnome.nix
 
       hm {
         home-manager.useGlobalPkgs = true;
