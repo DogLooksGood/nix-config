@@ -1,8 +1,8 @@
-{ config, pkgs, system, lib, hardware-configuration, ... }:
+{ config, pkgs, system, lib, root, ... }:
 {
   imports =
     [
-      /etc/nixos/hardware-configuration.nix
+      /${root}/hardware-configurations/x1c.nix
     ];
 
   nix = {

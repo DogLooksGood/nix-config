@@ -5,6 +5,7 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
+    overlays = [ inputs.emacs-overlay.overlay ];
   };
 
   stable = import nixpkgs-stable {
@@ -18,7 +19,7 @@ in
   tianshu-laptop = lib.nixosSystem {
     specialArgs = { inherit system pkgs lib root; };
     modules = [
-      ./laptop.nix
+      ./x1c.nix
 
       /${root}/desktops/gnome.nix
 

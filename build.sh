@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nixos-rebuild switch --use-remote-sudo --impure --flake .
+nixos-rebuild switch --use-remote-sudo --flake .
