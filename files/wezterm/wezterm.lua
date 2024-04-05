@@ -21,8 +21,9 @@ else
    config.color_scheme = 'Pro Light'
 end
 
-config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.use_fancy_tab_bar = true
 config.enable_wayland = true
+config.hide_tab_bar_if_only_one_tab = true
 
 return config

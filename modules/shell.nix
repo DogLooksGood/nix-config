@@ -25,10 +25,13 @@
     ventoy
     comma
     nixpkgs-fmt
+    wl-clipboard-x11
+    wl-clipboard
   ];
 
   home.file = {
     ".config/zellij".source = /${root}/files/zellij;
+    ".config/wezterm".source = /${root}/files/wezterm;
   };
 
   programs.git = {
