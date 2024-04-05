@@ -19,6 +19,8 @@ in
   tianshu-laptop = lib.nixosSystem {
     specialArgs = { inherit system pkgs lib root; };
     modules = [
+      /${root}/settings.nix
+
       ./x1c.nix
 
       /${root}/desktops/gnome.nix
