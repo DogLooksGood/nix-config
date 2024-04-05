@@ -22,7 +22,7 @@ else
 end
 
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
--- config.use_fancy_tab_bar = true
--- config.enable_wayland = true
+config.use_fancy_tab_bar = true
+config.enable_wayland = true
 
 return config

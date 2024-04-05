@@ -23,7 +23,7 @@ in
 
       ./x1c.nix
 
-      /${root}/desktops/gnome.nix
+      /${root}/desktops/kde.nix
 
       hm {
         home-manager.useGlobalPkgs = true;

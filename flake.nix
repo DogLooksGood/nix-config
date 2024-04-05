@@ -3,6 +3,8 @@
 
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
+    extra-substituters = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://mirror.sjtu.edu.cn/nix-channels/store https://cache.nixos.org/";
+    trusted-substituters = "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store https://mirror.sjtu.edu.cn/nix-channels/store https://cache.nixos.org/";
   };
 
   inputs = {
@@ -34,10 +36,10 @@
     let
       root = ./.;
     in
-    {
-      nixosConfigurations = import ./hosts {
-        inherit (nixpkgs) lib;
-        inherit nixpkgs nixpkgs-stable inputs root home-manager nixos-wsl;
+      {
+        nixosConfigurations = import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit nixpkgs nixpkgs-stable inputs root home-manager nixos-wsl;
+        };
       };
-    };
 }
