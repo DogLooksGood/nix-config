@@ -1,7 +1,6 @@
 { pkgs, root, ... }:
 {
   home.packages = with pkgs; [
-    podman
     podman-compose
   ];
 

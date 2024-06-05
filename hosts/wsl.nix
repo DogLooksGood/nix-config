@@ -18,6 +18,7 @@
     lmodern
     symbola
     lxgw-wenkai
+    uni-vga
   ];
 
   qt.enable = true;

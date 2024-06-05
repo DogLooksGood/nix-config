@@ -6,6 +6,8 @@
 
   services.desktopManager.plasma6.notoPackage = pkgs.noto-fonts-lgc-plus;
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
   environment.systemPackages = with pkgs; [
     kdePackages.qtwebengine
     kdePackages.qtwebview

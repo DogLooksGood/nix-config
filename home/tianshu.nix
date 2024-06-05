@@ -1,4 +1,4 @@
-{ root, pkgs, ... }:
+{ root, stable, pkgs, ... }:
 {
   imports = [
     /${root}/modules/rime.nix

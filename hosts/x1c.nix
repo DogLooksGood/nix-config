@@ -1,4 +1,4 @@
-{ config, pkgs, system, lib, root, ... }:
+{ config, pkgs, system, lib, root, stable, ... }:
 {
   imports =
     [
@@ -17,6 +17,7 @@
     lmodern
     lxgw-wenkai
     symbola
+    hackgen-nf-font
   ];
 
   qt.enable = true;
@@ -89,7 +90,7 @@
   hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Enable zsh shell
   programs.zsh.enable = true;
@@ -117,12 +118,21 @@
     firefox
   ];
 
-  environment.shellInit = ''
-    gpg-connect-agent /bye
-    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-  '';
+  # environment.shellInit = ''
+  #   gpg-connect-agent /bye
+  #   export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  # '';
 
   virtualisation.waydroid.enable = true;
+
+  virtualisation = {
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   # virtualisation.virtualbox.host.enable = true;
   # users.extraGroups.vboxusers.members = [ "tianshu" ];
 

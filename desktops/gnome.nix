@@ -48,12 +48,16 @@
   };
 
   environment.systemPackages = with pkgs; [
+    xonsh
+    python311
+    gnome.dconf-editor
     gnomeExtensions.kimpanel
     gnomeExtensions.color-picker
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
     gnomeExtensions.unite
     gnome3.gnome-tweaks
     qadwaitadecorations-qt6
+    wezterm
   ];
 
   environment.shellInit = ''

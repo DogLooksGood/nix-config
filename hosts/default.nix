@@ -23,14 +23,14 @@ in
 
       ./x1c.nix
 
-      /${root}/desktops/kde.nix
+      /${root}/desktops/gnome.nix
 
       hm {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
         home-manager.users.tianshu = import /${root}/home/tianshu.nix;
 
-        home-manager.extraSpecialArgs = { inherit root; };
+        home-manager.extraSpecialArgs = { inherit root stable; };
       }
     ];
   };
@@ -46,7 +46,7 @@ in
         home-manager.useUserPackages = true;
         home-manager.users.tianshu = import /${root}/home/tianshu.nix;
 
-        home-manager.extraSpecialArgs = { inherit root; };
+        home-manager.extraSpecialArgs = { inherit root stable; };
       }
     ];
   };

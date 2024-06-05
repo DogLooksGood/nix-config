@@ -14,7 +14,7 @@
     vivaldi
     vivaldi-ffmpeg-codecs
     inkscape
-    ungoogled-chromium
+    chromium
     godot_4
     libresprite
     libwacom
