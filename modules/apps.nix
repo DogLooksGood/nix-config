@@ -21,6 +21,7 @@
     scrcpy
     qbittorrent
     xournalpp
+    mindustry
   ];
 
   home.sessionVariables = {

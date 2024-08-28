@@ -17,7 +17,9 @@
     lmodern
     lxgw-wenkai
     symbola
-    hackgen-nf-font
+    hack-font
+    wqy_zenhei
+    pixel-code
   ];
 
   qt.enable = true;
@@ -86,7 +88,6 @@
   # services.printing.enable = true;
 
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
