@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, nixpkgs-stable, lib, root, home-manager, nixos-wsl, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, lib, root, home-manager, nixos-wsl, nixos-cosmic, ... }:
 let
   system = "x86_64-linux";
 
@@ -23,7 +23,7 @@ in
 
       ./x1c.nix
 
-      /${root}/desktops/gnome.nix
+      /${root}/desktops/cosmic.nix
 
       hm {
         home-manager.useGlobalPkgs = true;

@@ -24,6 +24,11 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
 
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils.url = "github:numtide/flake-utils";
 
     flake-compat = {
@@ -32,14 +37,14 @@
     };
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, flake-utils, emacs-overlay, nixos-wsl, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, flake-utils, emacs-overlay, nixos-wsl, nixos-cosmic, ... }:
     let
       root = ./.;
     in
       {
         nixosConfigurations = import ./hosts {
           inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-stable inputs root home-manager nixos-wsl;
+          inherit nixpkgs nixpkgs-stable inputs root home-manager nixos-wsl nixos-cosmic;
         };
       };
 }
