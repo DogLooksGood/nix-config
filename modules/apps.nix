@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, stable, ... }:
 {
   home.packages = with pkgs; [
     xray
@@ -22,6 +22,9 @@
     qbittorrent
     xournalpp
     mindustry
+    protonplus
+    blackbox-terminal
+    ytdownloader
   ];
 
   home.sessionVariables = {

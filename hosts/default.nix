@@ -17,13 +17,13 @@ let
 in
 {
   tianshu-laptop = lib.nixosSystem {
-    specialArgs = { inherit system pkgs lib root; };
+    specialArgs = { inherit system pkgs lib root nixos-cosmic; };
     modules = [
       /${root}/settings.nix
 
       ./x1c.nix
 
-      /${root}/desktops/cosmic.nix
+      /${root}/desktops/gnome.nix
 
       hm {
         home-manager.useGlobalPkgs = true;

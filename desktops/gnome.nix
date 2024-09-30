@@ -30,15 +30,15 @@
       auth       required                    ${pkgs.fprintd}/lib/security/pam_fprintd.so
       auth       optional                    pam_permit.so
       auth       required                    pam_env.so
-      auth       [success=ok default=1]      ${pkgs.gnome.gdm}/lib/security/pam_gdm.so
-      auth       optional                    ${pkgs.gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so
+      auth       [success=ok default=1]      ${pkgs.gdm}/lib/security/pam_gdm.so
+      auth       optional                    ${pkgs.gnome-keyring}/lib/security/pam_gnome_keyring.so
 
       account    include                     login
 
       password   required                    pam_deny.so
 
       session    include                     login
-      session    optional                    ${pkgs.gnome.gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
+      session    optional                    ${pkgs.gnome-keyring}/lib/security/pam_gnome_keyring.so auto_start
     '';
   };
 
@@ -50,12 +50,12 @@
   environment.systemPackages = with pkgs; [
     xonsh
     python311
-    gnome.dconf-editor
+    dconf-editor
     gnomeExtensions.kimpanel
     gnomeExtensions.color-picker
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
     gnomeExtensions.unite
-    gnome3.gnome-tweaks
+    gnome-tweaks
     qadwaitadecorations-qt6
     wezterm
   ];

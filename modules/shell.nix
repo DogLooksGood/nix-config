@@ -24,6 +24,7 @@
     git
     ventoy
     comma
+    rlwrap
     nixpkgs-fmt
     wl-clipboard-x11
     wl-clipboard
