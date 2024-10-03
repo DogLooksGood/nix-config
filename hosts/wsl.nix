@@ -19,6 +19,7 @@
     symbola
     lxgw-wenkai
     uni-vga
+    inconsolata
   ];
 
   qt.enable = true;

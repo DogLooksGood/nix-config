@@ -4,4 +4,8 @@
     emacs-pgtk
     emacs-lsp-booster
   ];
+
+  home.sessionVariables = {
+    EMACS_MODULE_HEADER = "${pkgs.emacs-pgtk}/include/emacs-module.h";
+  };
 }

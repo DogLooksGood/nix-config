@@ -12,4 +12,8 @@
     ".local/share/fcitx5/rime/xklbdz.dict.yaml".source = /${root}/files/rime/xklbdz.dict.yaml;
     ".local/share/fcitx5/rime/xklbdz.extended.dict.yaml".source = /${root}/files/rime/xklbdz.extended.dict.yaml;
   };
+
+  home.sessionVariables = {
+    LIBRIME_ROOT = "${pkgs.librime}/";
+  };
 }

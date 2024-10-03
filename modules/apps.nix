@@ -15,16 +15,16 @@
     vivaldi-ffmpeg-codecs
     inkscape
     chromium
-    godot_4
     libresprite
     libwacom
-    scrcpy
     qbittorrent
     xournalpp
     mindustry
     protonplus
     blackbox-terminal
     ytdownloader
+    ldtk
+    goldendict-ng
   ];
 
   home.sessionVariables = {
