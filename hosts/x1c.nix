@@ -31,7 +31,13 @@
     fcitx5.addons = with pkgs; [
       fcitx5-rime
       fcitx5-gtk
+      libsForQt5.fcitx5-qt
     ];
+  };
+
+  hardware = {
+    graphics.enable = true;
+    graphics.extraPackages = with pkgs; [ vpl-gpu-rt ];
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -118,6 +124,8 @@
     gnupg
     wget
     firefox
+    vulkan-tools
+    neofetch
   ];
 
   # environment.shellInit = ''
