@@ -17,7 +17,7 @@ let
 in
 {
   tianshu-laptop = lib.nixosSystem {
-    specialArgs = { inherit system pkgs lib root nixos-cosmic; };
+    specialArgs = { inherit inputs system pkgs lib root nixos-cosmic; };
     modules = [
       /${root}/settings.nix
 

@@ -45,7 +45,6 @@
     EDITOR = "emacsclient";
   };
 
-
   programs.bash.enable = true;
 
   programs.zsh = {

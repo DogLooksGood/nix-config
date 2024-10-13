@@ -25,6 +25,7 @@
     ytdownloader
     ldtk
     goldendict-ng
+    floorp
   ];
 
   home.sessionVariables = {

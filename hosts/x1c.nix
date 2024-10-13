@@ -1,4 +1,4 @@
-{ config, pkgs, system, lib, root, stable, ... }:
+{ config, pkgs, inputs, system, lib, root, stable, ... }:
 {
   imports =
     [
@@ -100,8 +100,17 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  # Enable zsh shell
   programs.zsh.enable = true;
+
+  # Enable zsh shell
+  # programs.xonsh = {
+  #   enable = true;
+  #   config = ''
+  #   aliases['zj'] = 'zellij --layout $HOME/.config/zellij/layout.kdl'
+  #   aliases['pr'] = "podman run -it --rm --detach-keys 'ctrl-d'"
+  #   '';
+  #   package = pkgs.xonsh.override { extraPackages = ps: [ ps.xontrib-prompt-bar ]; };
+  # };
 
   # No password for sudo
   security.sudo.wheelNeedsPassword = false;
@@ -126,6 +135,7 @@
     firefox
     vulkan-tools
     neofetch
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   # environment.shellInit = ''

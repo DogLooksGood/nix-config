@@ -22,22 +22,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
 
     nixos-cosmic = {
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    flake-utils.url = "github:numtide/flake-utils";
-
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, flake-utils, emacs-overlay, nixos-wsl, nixos-cosmic, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, emacs-overlay, nixos-wsl, nixos-cosmic, ... }:
     let
       root = ./.;
     in
