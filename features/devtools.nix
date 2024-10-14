@@ -1,4 +1,4 @@
-{ config, stable, pkgs, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     rust-analyzer

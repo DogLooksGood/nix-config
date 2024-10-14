@@ -1,9 +1,8 @@
-{ config, pkgs, stable, system, lib, home-manager, modules, nixos-wsl, ... }:
+{ config, pkgs, stable, system, home-manager, inputs, ... }:
 {
   imports =
     [
-      nixos-wsl.nixosModules.wsl
-      home-manager.nixosModules.home-manager
+      inputs.nixos-wsl.nixosModules.wsl
     ];
 
   nix = {

@@ -5,14 +5,11 @@
     telegram-desktop
     discord
     freetube
-    firefox
     rnote
     pinentry
     libreoffice-fresh
     vlc
     drawio
-    vivaldi
-    vivaldi-ffmpeg-codecs
     inkscape
     chromium
     libresprite
@@ -25,12 +22,7 @@
     ytdownloader
     ldtk
     goldendict-ng
-    floorp
   ];
-
-  home.sessionVariables = {
-    SDL_VIDEODRIVER = "wayland";
-  };
 
   fonts.fontconfig.enable = true;
 }

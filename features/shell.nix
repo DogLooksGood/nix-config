@@ -1,4 +1,4 @@
-{ config, pkgs, root, ... }:
+{ pkgs, root, ... }:
 {
   home.packages = with pkgs; [
     pass

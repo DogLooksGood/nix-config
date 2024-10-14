@@ -1,4 +1,4 @@
-{ inputs, nixpkgs, nixpkgs-stable, lib, root, home-manager, nixos-wsl, nixos-cosmic, ... }:
+{ inputs, nixpkgs, nixpkgs-stable, lib, root, ... }:
 let
   system = "x86_64-linux";
 
@@ -12,12 +12,11 @@ let
     inherit system;
     config.allowUnfree = true;
   };
-
-  hm = home-manager.nixosModules.home-manager;
 in
 {
   tianshu-laptop = lib.nixosSystem {
-    specialArgs = { inherit inputs system pkgs lib root nixos-cosmic; };
+    inherit system;
+    specialArgs = { inherit system pkgs inputs root stable; };
     modules = [
       /${root}/settings.nix
 
@@ -25,29 +24,21 @@ in
 
       /${root}/desktops/gnome.nix
 
-      hm {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.tianshu = import /${root}/home/tianshu.nix;
+      inputs.home-manager.nixosModules.home-manager
 
-        home-manager.extraSpecialArgs = { inherit root stable; };
-      }
+      /${root}/home
     ];
   };
 
   tianshu-wsl = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit system pkgs stable lib nixos-wsl; };
+    specialArgs = { inherit system pkgs inputs root stable; };
     modules = [
       ./wsl.nix
 
-      hm {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.tianshu = import /${root}/home/tianshu.nix;
+      inputs.home-manager.nixosModules.home-manager
 
-        home-manager.extraSpecialArgs = { inherit root stable; };
-      }
+      /${root}/home
     ];
   };
 }

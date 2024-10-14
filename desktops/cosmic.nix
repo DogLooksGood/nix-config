@@ -1,7 +1,7 @@
-{ config, pkgs, lib, nixos-cosmic, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports = [
-    nixos-cosmic.nixosModules.default
+    inputs.nixos-cosmic.nixosModules.default
   ];
 
   services.desktopManager.cosmic.enable = true;

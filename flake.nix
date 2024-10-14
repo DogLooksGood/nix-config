@@ -32,14 +32,15 @@
     };
   };
 
-  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, emacs-overlay, nixos-wsl, nixos-cosmic, ... }:
+  outputs = inputs@{ home-manager, nixpkgs, nixpkgs-stable, ... }:
     let
+      # We use this var to locate files based on their relative paths.
       root = ./.;
     in
       {
         nixosConfigurations = import ./hosts {
           inherit (nixpkgs) lib;
-          inherit nixpkgs nixpkgs-stable inputs root home-manager nixos-wsl nixos-cosmic;
+          inherit nixpkgs nixpkgs-stable inputs root;
         };
       };
 }
