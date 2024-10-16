@@ -48,13 +48,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    xonsh
-    python311
     dconf-editor
     gnomeExtensions.kimpanel
-    gnomeExtensions.color-picker
+    gnomeExtensions.paperwm
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
-    gnomeExtensions.unite
+    gnomeExtensions.wiggle
     gnome-tweaks
     qadwaitadecorations-qt6
     wezterm
