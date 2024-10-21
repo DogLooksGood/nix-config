@@ -12,7 +12,6 @@
     kdePackages.qtwebengine
     kdePackages.qtwebview
     kdePackages.fcitx5-qt
-    wezterm
   ];
 
   hardware.bluetooth.enable = true;

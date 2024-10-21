@@ -55,7 +55,6 @@
     gnomeExtensions.wiggle
     gnome-tweaks
     qadwaitadecorations-qt6
-    wezterm
   ];
 
   environment.shellInit = ''

@@ -2,6 +2,8 @@
 {
   home.packages = with pkgs; [
     pass
+    ddgr
+    most
     simple-http-server
     ripgrep
     mosh
@@ -32,7 +34,6 @@
 
   home.file = {
     ".config/zellij".source = /${root}/files/zellij;
-    ".config/wezterm".source = /${root}/files/wezterm;
   };
 
   programs.git = {
@@ -53,6 +54,7 @@
     enableCompletion = true;
     autosuggestion.enable = false;
     shellAliases = {
+      e = "emacsclient -nw";
       z = "zellij --layout $HOME/.config/zellij/layout.kdl";
       zt = "zellij action new-tab --cwd . --layout";
       pr = "podman run -it --rm --detach-keys 'ctrl-d'";

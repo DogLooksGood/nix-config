@@ -1,0 +1,17 @@
+keymap:
+  - name: "emacs"
+    application:
+      not: [Emacs]
+    remap:
+      C-y: { with_mark: right }
+      M-y: { with_mark: C-right }
+      C-n: { with_mark: left }
+      M-n: { with_mark: C-left }
+      C-a: { with_mark: home }
+      C-d: { with_mark: end }
+      C-r: { with_mark: up }
+      C-l: { with_mark: down }
+      C-v: [ Shift-end, C-b, { set_mark: false } ]
+      C-h: [ delete, { set_mark: false } ]
+      M-h: [ C-delete, { set_mark: false } ]
+      Alt-backspace: [C-backspace, {set_mark: false}]

@@ -24,6 +24,8 @@ in
 
       /${root}/desktops/gnome.nix
 
+      inputs.xremap-flake.nixosModules.default
+
       inputs.home-manager.nixosModules.home-manager
 
       /${root}/home

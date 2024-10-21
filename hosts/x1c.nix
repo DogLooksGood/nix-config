@@ -17,9 +17,17 @@
     lmodern
     lxgw-wenkai
     symbola
-    hack-font
-    wqy_zenhei
-    inconsolata
+    unifont
+    unifont_upper
+    julia-mono
+    pixel-code
+    noto-fonts-monochrome-emoji
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
+    noto-fonts-lgc-plus
+    iosevka
+    sarasa-gothic
+    fixedsys-excelsior
   ];
 
   qt.enable = true;
@@ -173,8 +181,12 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-
-  # List services that you want to enable:
+  # services.xremap = {
+  #   withGnome = true;
+  #   serviceMode = "user";
+  #   userName = "tianshu";
+  #   yamlConfig = builtins.readFile /${root}/files/xremap/config.yaml;
+  # };
 
   # Smart card
   services.pcscd.enable = true;
