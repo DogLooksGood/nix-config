@@ -181,13 +181,6 @@
     localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
-  # services.xremap = {
-  #   withGnome = true;
-  #   serviceMode = "user";
-  #   userName = "tianshu";
-  #   yamlConfig = builtins.readFile /${root}/files/xremap/config.yaml;
-  # };
-
   # Smart card
   services.pcscd.enable = true;
 

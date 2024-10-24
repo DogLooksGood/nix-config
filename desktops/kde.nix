@@ -12,6 +12,9 @@
     kdePackages.qtwebengine
     kdePackages.qtwebview
     kdePackages.fcitx5-qt
+
+    alacritty
+    alacritty-theme
   ];
 
   hardware.bluetooth.enable = true;

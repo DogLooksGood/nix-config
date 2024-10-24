@@ -22,9 +22,8 @@ in
 
       ./x1c.nix
 
-      /${root}/desktops/gnome.nix
-
-      inputs.xremap-flake.nixosModules.default
+      # /${root}/desktops/gnome.nix
+      /${root}/desktops/kde.nix
 
       inputs.home-manager.nixosModules.home-manager
 

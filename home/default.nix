@@ -12,6 +12,7 @@
       /${root}/features/apps.nix
       /${root}/features/web3.nix
       /${root}/features/devtools.nix
+      /${root}/features/alacritty.nix
     ];
 
     home.username = "tianshu";
