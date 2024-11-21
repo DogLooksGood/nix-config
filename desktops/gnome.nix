@@ -1,24 +1,15 @@
 { config, pkgs, lib, ... }:
 {
-  nixpkgs.overlays = [
-    (final: prev: {
-      gnome = prev.gnome.overrideScope' (gnomeFinal: gnomePrev: {
-        mutter = gnomePrev.mutter.overrideAttrs ( old: {
-          src = pkgs.fetchgit {
-            url = "https://gitlab.gnome.org/vanvugt/mutter.git";
-            # GNOME 45: triple-buffering-v4-45
-            rev = "0b896518b2028d9c4d6ea44806d093fd33793689";
-            sha256 = "sha256-mzNy5GPlB2qkI2KEAErJQzO//uo8yO0kPQUwvGDwR4w=";
-          };
-        } );
-      });
-    })
-  ];
-  nixpkgs.config.allowAliases = false;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    gnome-connections
+    epiphany
+    geary
+  ];
 
   security.pam.services.login.fprintAuth = false;
   # similarly to how other distributions handle the fingerprinting login
@@ -50,14 +41,28 @@
   environment.systemPackages = with pkgs; [
     dconf-editor
     gnomeExtensions.kimpanel
-    gnomeExtensions.paperwm
     gnomeExtensions.legacy-gtk3-theme-scheme-auto-switcher
     gnomeExtensions.wiggle
     gnome-tweaks
     qadwaitadecorations-qt6
+    gnomeExtensions.kando-integration
   ];
 
   environment.shellInit = ''
     export QT_WAYLAND_DECORATION=adwaita
   '';
+
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
+
+  # Use Fcitx5 input method
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+      fcitx5-gtk
+      libsForQt5.fcitx5-qt
+    ];
+  };
+
 }

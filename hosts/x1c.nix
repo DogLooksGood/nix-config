@@ -1,8 +1,13 @@
-{ config, pkgs, inputs, system, lib, root, stable, ... }:
+{ pkgs, inputs, system, root, ... }:
 {
   imports =
     [
       /${root}/hardware-configurations/x1c.nix
+
+      # Android simulator
+      # /${root}/modules/waydroid.nix
+
+      /${root}/modules/font.nix
     ];
 
   nix = {
@@ -13,35 +18,7 @@
     '';
   };
 
-  fonts.packages = with pkgs; [
-    lmodern
-    lxgw-wenkai
-    symbola
-    unifont
-    unifont_upper
-    julia-mono
-    pixel-code
-    noto-fonts-monochrome-emoji
-    noto-fonts-cjk-serif
-    noto-fonts-cjk-sans
-    noto-fonts-lgc-plus
-    iosevka
-    sarasa-gothic
-    fixedsys-excelsior
-  ];
-
   qt.enable = true;
-
-  # Use Fcitx5 input method
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
-      fcitx5-gtk
-      libsForQt5.fcitx5-qt
-    ];
-  };
 
   hardware = {
     graphics.enable = true;
@@ -84,26 +61,40 @@
   services.xserver.xkb.variant = "dvp";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  services.tlp = {
+  console.useXkbConfig = true;
+
+  powerManagement = {
     enable = true;
-    settings = {
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 20;
+    powertop.enable = true;
+    cpuFreqGovernor = "powersave";
+  };
+
+  services = {
+    thermald.enable = true;
+    power-profiles-daemon.enable = false;
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+        charger = {
+          governor = "powersave";
+          turbo = "auto";
+        };
+      };
     };
   };
-  services.power-profiles-daemon.enable = false;
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
   # Enable sound.
   # hardware.pulseaudio.enable = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -146,12 +137,19 @@
     inputs.zen-browser.packages."${system}".specific
   ];
 
+  # Enable flatpack
+  # Usages:
+  # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  # flatpak update
+  # flatpak search xxx
+  # flatpak install xxx
+  # flatpak run xxx
+  services.flatpak.enable = true;
+
   # environment.shellInit = ''
   #   gpg-connect-agent /bye
   #   export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   # '';
-
-  virtualisation.waydroid.enable = true;
 
   virtualisation = {
     podman = {
@@ -174,12 +172,12 @@
 
   programs.ssh.startAgent = false;
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
+  # programs.steam = {
+  #   enable = true;
+  #   remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  #   dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  #   localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  # };
 
   # Smart card
   services.pcscd.enable = true;
@@ -189,27 +187,6 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall = {
-    enable = true;
-    trustedInterfaces = [ "waydroid0" ];
-    allowedTCPPorts = [
-      80 443 3000 4000 8000 8081
-    ];
-    allowedUDPPorts = [
-      53 67
-    ];
-    allowedUDPPortRanges = [
-      { from = 4000; to = 4007; }
-      { from = 8000; to = 8010; }
-    ];
-  };
-
-  networking.nat = {
-    enable = true;
-    internalInterfaces = ["ve-+"];
-  };
 
   system.stateVersion = "23.11"; # Do not change
 }

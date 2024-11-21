@@ -8,7 +8,7 @@
     ripgrep
     mosh
     zellij
-    babashka
+    babashka-unwrapped
     curl
     unzip
     wget
@@ -63,11 +63,6 @@
     profileExtra = ''
       export FZF_DEFAULT_OPTS="--color bw"
       export EDITOR=emacsclient
-
-      LOCAL_RC=$HOME/.zshrc
-      if [ -f "$LOCAL_RC" ]; then
-        . "$LOCAL_RC"
-      fi
     '';
     oh-my-zsh = {
       enable = true;

@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nixos-rebuild switch --use-remote-sudo --show-trace --flake .
+nixos-rebuild switch --accept-flake-config --use-remote-sudo --flake .

@@ -1,10 +1,7 @@
-{ pkgs, stable, ... }:
+{ pkgs, ... }:
 {
   home.packages = with pkgs; [
     xray
-    telegram-desktop
-    discord
-    freetube
     rnote
     pinentry
     libreoffice-fresh
@@ -21,7 +18,12 @@
     blackbox-terminal
     ytdownloader
     ldtk
-    goldendict-ng
+    slack
+    thunderbird
+    zoom-us
+    dino
+    kando
+    fontforge-gtk
   ];
 
   fonts.fontconfig.enable = true;

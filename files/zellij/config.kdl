@@ -74,8 +74,8 @@ keybinds clear-defaults=true {
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "t" { ScrollDown; }
         bind "c" { ScrollUp; }
-        bind "n" "@" { PageScrollDown; }
-        bind "h" "/" { PageScrollUp; }
+        bind "Ctrl v" "n" { PageScrollDown; }
+        bind "Alt v" "h" { PageScrollUp; }
         bind "^" { HalfPageScrollDown; }
         bind "?" { HalfPageScrollUp; }
         bind "Alt c" { Copy; }
@@ -280,7 +280,7 @@ scroll_buffer_size 10000
 // copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
-copy_command "clip.exe"                    // wsl
+// copy_command "clip.exe"                   // wsl
 
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
@@ -289,7 +289,7 @@ copy_command "clip.exe"                    // wsl
 //   - system (default)
 //   - primary
 //
-// copy_clipboard "primary"
+copy_clipboard "primary"
 
 // Enable or disable automatic copy (and clear) of selection when releasing mouse
 // Default: true

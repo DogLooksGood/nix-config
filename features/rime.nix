@@ -1,30 +1,47 @@
-{ config, lib, pkgs, root, ... }:
+{ lib, pkgs, root, ... }:
 let
-  schemaSrc = pkgs.fetchzip {
-    url = "https://github.com/sbsrf/sbsrf/releases/download/20240915/sbsrf.zip";
-    hash = "sha256-YjYUB5LNpzXCtU9cX4pDp5mJ+0Pd17r98LslaK2E4y4=";
-    stripRoot = false;
+  quick5Src = builtins.fetchGit {
+    url = "git@github.com:DogLooksGood/rime-quick.git";
+    ref = "master";
+    rev = "d3478d63c3c0c3385a1b4d1ecb0f55584574d2bb";
   };
 
-  targetDir = ".local/share/fcitx5/rime";
+  targetDir = ".config/rime";
 
-  srcFiles = builtins.readDir schemaSrc;
+  processFiles = dir:
+    let
+      src = builtins.readDir dir;
+
+      allFiles = lib.attrsets.mapAttrsToList
+        (file: type:
+          {
+            name = "${targetDir}/${file}";
+            value = { source = "${dir}/${file}"; };
+          })
+        src;
+
+      yamlOnly = builtins.filter
+        (x: lib.strings.hasSuffix ".yaml" x.name)
+        allFiles;
+
+    in
+      builtins.listToAttrs yamlOnly;
 in
 {
   home.packages = with pkgs; [
     librime
     librime-lua
+    rime-data
   ];
 
-  home.file = builtins.listToAttrs
-    (lib.attrsets.mapAttrsToList
-      (file: type:
-        {
-          name = "${targetDir}/${file}";
-          value = { source = "${schemaSrc}/${file}"; };
-        }
-      )
-      srcFiles);
+  home.file =
+    processFiles "${pkgs.rime-data}/share/rime-data"
+    //
+    processFiles quick5Src
+    //
+    {
+      "${targetDir}/default.custom.yaml".source = /${root}/files/rime/default.custom.yaml;
+    };
 
   home.sessionVariables = {
     LIBRIME_ROOT = "${pkgs.librime}/";
