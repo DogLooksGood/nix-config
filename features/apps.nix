@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     xray
-    rnote
     pinentry
     libreoffice-fresh
     vlc
@@ -13,17 +12,13 @@
     libwacom
     qbittorrent
     xournalpp
-    mindustry
-    protonplus
-    blackbox-terminal
     ytdownloader
     ldtk
     slack
     thunderbird
-    zoom-us
-    dino
-    kando
     fontforge-gtk
+    nix-index
+    obs-studio
   ];
 
   fonts.fontconfig.enable = true;

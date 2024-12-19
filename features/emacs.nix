@@ -7,6 +7,7 @@
     typescript-language-server
     clojure-lsp
     rust-analyzer
+    copilot-node-server
     nil
   ];
 

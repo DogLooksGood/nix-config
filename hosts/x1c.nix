@@ -146,6 +146,9 @@
   # flatpak run xxx
   services.flatpak.enable = true;
 
+  # Enable Guix package manager
+  services.guix.enable = true;
+
   # environment.shellInit = ''
   #   gpg-connect-agent /bye
   #   export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

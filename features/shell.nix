@@ -28,6 +28,8 @@
     comma
     rlwrap
     nixpkgs-fmt
+    btop
+    file
     wl-clipboard-x11
     wl-clipboard
   ];
@@ -63,6 +65,8 @@
     profileExtra = ''
       export FZF_DEFAULT_OPTS="--color bw"
       export EDITOR=emacsclient
+      GUIX_PROFILE="$HOME/.config/guix/current"
+      . "$GUIX_PROFILE/etc/profile"
     '';
     oh-my-zsh = {
       enable = true;

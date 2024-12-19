@@ -9,7 +9,7 @@
       ];
       font = {
         normal = {
-          family = "JuliaMono";
+          family = "Hack";
           style = "Regular";
         };
         size = 10.0;

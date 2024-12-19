@@ -14,5 +14,9 @@
     source-serif-pro
     source-sans-pro
     source-code-pro
+    hack-font
+    dm-sans
+    font-awesome
+    pixel-code
   ];
 }

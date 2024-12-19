@@ -5,5 +5,6 @@
     gnumake
     gcc
     pkg-config
+    universal-ctags
   ];
 }

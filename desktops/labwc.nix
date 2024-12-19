@@ -3,11 +3,29 @@
   programs.labwc.enable = true;
 
   services.displayManager.ly.enable = true;
+  services.blueman.enable = true;
 
   environment.systemPackages = with pkgs; [
     waybar
     foot
+    mako
+    kanshi
+    fuzzel
+    wlroots
+    wlr-randr
+    pipewire
+    numix-cursor-theme
+    overskride
+    brightnessctl
+    alsa-utils
+    blueman
+    grim
+    slurp
   ];
+
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+  };
 
   services.xserver = {
     enable = true;

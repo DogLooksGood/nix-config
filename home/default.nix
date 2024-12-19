@@ -14,6 +14,7 @@
       /${root}/features/devtools.nix
       /${root}/features/alacritty.nix
       /${root}/features/security.nix
+      /${root}/features/icons.nix
     ];
 
     home.username = "tianshu";

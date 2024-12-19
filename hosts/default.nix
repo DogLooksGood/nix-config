@@ -23,14 +23,14 @@ in
         # /${root}/desktops/kde.nix
 
         # Use labwc
-        # /${root}/desktops/labwc.nix
+        /${root}/desktops/labwc.nix
 
         # Use LxQT
         # /${root}/desktops/lxqt.nix
 
         # Use Cosmic
-        inputs.nixos-cosmic.nixosModules.default
-        /${root}/desktops/cosmic.nix
+        # inputs.nixos-cosmic.nixosModules.default
+        # /${root}/desktops/cosmic.nix
 
         inputs.home-manager.nixosModules.home-manager
 
