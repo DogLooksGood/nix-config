@@ -19,6 +19,9 @@
     fontforge-gtk
     nix-index
     obs-studio
+    goldendict-ng
+    blender
+    tiled
   ];
 
   fonts.fontconfig.enable = true;

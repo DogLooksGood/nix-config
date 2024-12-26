@@ -22,11 +22,20 @@ in
         # Use KDE
         # /${root}/desktops/kde.nix
 
+        # Wayland WM defaults
+        /${root}/desktops/wayland-wm.nix
+
         # Use labwc
         /${root}/desktops/labwc.nix
 
+        # Use sway
+        /${root}/desktops/sway.nix
+
         # Use LxQT
         # /${root}/desktops/lxqt.nix
+
+        # Use openbox
+        # /${root}/desktops/openbox.nix
 
         # Use Cosmic
         # inputs.nixos-cosmic.nixosModules.default

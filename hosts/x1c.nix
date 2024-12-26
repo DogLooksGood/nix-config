@@ -134,7 +134,6 @@
     firefox
     vulkan-tools
     neofetch
-    inputs.zen-browser.packages."${system}".specific
   ];
 
   # Enable flatpack

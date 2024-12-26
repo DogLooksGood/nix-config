@@ -30,6 +30,8 @@
     nixpkgs-fmt
     btop
     file
+    ffmpeg
+    xxd
     wl-clipboard-x11
     wl-clipboard
   ];
@@ -68,10 +70,6 @@
       GUIX_PROFILE="$HOME/.config/guix/current"
       . "$GUIX_PROFILE/etc/profile"
     '';
-    oh-my-zsh = {
-      enable = true;
-      theme = "simple";
-    };
   };
 
   programs.fzf = {
