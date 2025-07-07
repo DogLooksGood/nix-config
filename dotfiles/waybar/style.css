@@ -1,0 +1,41 @@
+* {
+    background-color: black;
+}
+
+#bluetooth, #clock, #battery, #network, #pulseaudio, #backlight {
+    font-size: 12px;
+    color: white;
+    margin-right: 16px;
+}
+
+#window {
+    font-size: 14px;
+    color: white;
+}
+
+#scratchpad {
+    font-size: 12px;
+    color: white;
+}
+
+#workspaces button {
+    font-size: 10px;
+    color: white;
+    padding: 0px;
+    margin: 2px;
+    border-radius: 0;
+    color: gray;
+}
+
+#workspaces button.urgent {
+    color: red;
+}
+
+#workspaces button.current_output {
+    color: white;
+}
+
+#workspaces button.focused {
+    border-width: 1px;
+    border-color: white;
+}

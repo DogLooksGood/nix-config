@@ -1,0 +1,81 @@
+set $mod Mod4
+
+floating_modifier $mod
+
+bindsym XF86AudioLowerVolume          exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume          exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioMute                 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86MonBrightnessUp           exec brightnessctl set 2%+
+bindsym XF86MonBrightnessDown         exec brightnessctl set 2%-
+bindsym XF86SelectiveScreenshot       exec grim -t jpeg -g "$(slurp -d)" - | wl-copy
+bindsym Shift+XF86SelectiveScreenshot exec grim -t jpeg -g "$(slurp -d)" ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+bindsym Print                         exec grim -t jpeg - | wl-copy
+bindsym Shift+Print                   exec grim -t jpeg ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+# bindsym XF86Assistant                 exec fuzzel
+
+bindsym $mod+q           kill
+bindsym $mod+h           focus left
+bindsym $mod+t           focus down
+bindsym $mod+c           focus up
+bindsym $mod+n           focus right
+bindsym $mod+Shift+h     move left
+bindsym $mod+Shift+t     move down
+bindsym $mod+Shift+c     move up
+bindsym $mod+Shift+n     move right
+bindsym $mod+r           split h
+bindsym $mod+d           split v
+bindsym $mod+g           floating toggle
+bindsym $mod+plus        resize grow width 10
+bindsym $mod+minus       resize shrink width 10
+bindsym $mod+underscore  resize shrink height 10
+bindsym $mod+4           resize grow height 10
+bindsym $mod+z           sticky toggle
+bindsym $mod+Shift+l     reload
+bindsym $mod+Shift+e     exec swaymsg exit
+bindsym $mod+Shift+m     move scratchpad
+bindsym $mod+m           scratchpad show
+bindsym $mod+f           fullscreen toggle
+bindsym $mod+s           layout stacking
+bindsym $mod+w           layout tabbed
+bindsym $mod+e           layout toggle split
+bindsym $mod+o           focus parent
+bindsym $mod+i           focus child
+bindsym $mod+greater     move workspace to output right
+bindsym $mod+less        move workspace to output left
+bindsym $mod+tab         focus mode_toggle
+bindsym $mod+Return      exec foot
+bindsym $mod+space       exec fuzzel
+
+bindsym $mod+ampersand   workspace number "1"
+bindsym $mod+bracketleft workspace number "2"
+bindsym $mod+braceleft   workspace number "3"
+bindsym $mod+braceright  workspace number "4"
+bindsym $mod+parenleft   workspace number "5"
+bindsym $mod+percent     move container to workspace number "1"
+bindsym $mod+7           move container to workspace number "2"
+bindsym $mod+5           move container to workspace number "3"
+bindsym $mod+3           move container to workspace number "4"
+bindsym $mod+1           move container to workspace number "5"
+
+exec fcitx5 -d
+exec_always killall -s USR2 waybar
+exec_always killall -s HUP kanshi
+exec kanshi &
+exec waybar &
+
+input type:keyboard repeat_delay 200
+input type:keyboard repeat_rate 40
+
+include /etc/sway/config.d/nixos.conf
+
+input type:touchpad {
+  natural_scroll enabled
+}
+
+input type:keyboard {
+  repeat_delay 200
+  repeat_rate 40
+  xkb_layout "us"
+  xkb_variant "dvp"
+  xkb_options caps:ctrl_modifier
+}
