@@ -11,7 +11,10 @@
       fastfetch
       telegram-desktop
       emacs-igc-pgtk
+      emacs-lsp-booster
       ripgrep
+      brave
+      slack
     ];
 
     home.sessionVariables = {
