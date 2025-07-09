@@ -31,5 +31,15 @@
 	          ./home.nix
           ];
         };
+
+        nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+          inherit pkgs;
+          modules = [
+	          home-manager.nixosModules.home-manager
+            ./hardware-configuration/desktop.nix
+            ./configuration.nix
+	          ./home.nix
+          ];
+        };
       };
 }
