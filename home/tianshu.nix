@@ -1,13 +1,36 @@
 { config, home-manager, pkgs, ... }:
 {
-  home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-
   home-manager.users.tianshu = {
     home.username = "tianshu";
     home.homeDirectory = "/home/tianshu";
 
     home.packages = with pkgs; [
+      mg
+      git
+      wget
+      tree
+      tmux
+      gcc
+      gnumake
+      grim
+      slurp
+      mako
+      foot
+      fuzzel
+      firefox
+      pass
+      zip
+      file
+      btop
+      gh
+      acpi
+      wlr-randr
+      killall
+      bluetui
+      libnotify
+      wev
+      wl-clipboard
       fastfetch
       telegram-desktop
       emacs-igc-pgtk
@@ -46,14 +69,16 @@
       bash.enable = true; # see note on other shells below
     };
 
+    programs.firefox.enable = true;
+
     home.file = {
-      ".config/kanshi" = { source = ./dotfiles/kanshi; };
-      ".config/zellij" = { source = ./dotfiles/zellij; };
-      ".config/containers" = { source = ./dotfiles/containers; };
-      ".config/sway" = { source = ./dotfiles/sway; };
-      ".config/waybar" = { source = ./dotfiles/waybar; };
-      ".config/foot" = { source = ./dotfiles/foot; };
-      ".config/fuzzel" = { source = ./dotfiles/fuzzel; };
+      ".config/kanshi" = { source = ../dotfiles/kanshi; };
+      ".config/zellij" = { source = ../dotfiles/zellij; };
+      ".config/containers" = { source = ../dotfiles/containers; };
+      ".config/sway" = { source = ../dotfiles/sway; };
+      ".config/waybar" = { source = ../dotfiles/waybar; };
+      ".config/foot" = { source = ../dotfiles/foot; };
+      ".config/fuzzel" = { source = ../dotfiles/fuzzel; };
     };
 
     services.kanshi.enable = true;

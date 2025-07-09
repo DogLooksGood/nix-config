@@ -7,7 +7,8 @@
 {
   imports =
     [
-      ./cachix.nix
+      ../hardware-configuration/desktop.nix
+      ../cachix.nix
     ];
 
   # Enable flakes
@@ -20,7 +21,7 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "desktop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -86,37 +87,13 @@
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
-  programs.firefox.enable = true;
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     mg
     git
-    tree
     wget
     tmux
-    gcc
-    gnumake
-    grim
-    slurp
-    mako
-    foot
-    fuzzel
-    firefox
-    pass
-    zip
-    file
-    btop
-    gh
-    acpi
-    wlr-randr
-    killall
-    bluetui
-    libnotify
-    wev
-    wl-clipboard
-    waybar
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -129,29 +106,18 @@
     nerd-fonts.bigblue-terminal
   ];
 
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
-  # Nekoray VPN
-  programs.nekoray = {
-    enable = true;
-    tunMode.enable = true;
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  # List services that you want to enable:
-
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+      vpl-gpu-rt
+    ];
+  };
+
+  services.tlp.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

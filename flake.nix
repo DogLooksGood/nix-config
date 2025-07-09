@@ -22,23 +22,21 @@
       };
     in
       {
-        nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.x1c = nixpkgs.lib.nixosSystem {
           inherit pkgs;
           modules = [
-	          home-manager.nixosModules.home-manager
-            ./hardware-configuration/x1c.nix
-            ./configuration.nix
-	          ./home.nix
+            home-manager.nixosModules.home-manager
+            ./hosts/x1c.nix
+            ./home/tianshu.nix
           ];
         };
 
         nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
           inherit pkgs;
           modules = [
-	          home-manager.nixosModules.home-manager
-            ./hardware-configuration/desktop.nix
-            ./configuration.nix
-	          ./home.nix
+            home-manager.nixosModules.home-manager
+            ./hosts/desktop.nix
+            ./home/tianshu.nix
           ];
         };
       };
