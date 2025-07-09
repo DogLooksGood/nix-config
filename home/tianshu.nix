@@ -38,7 +38,6 @@
       ripgrep
       brave
       slack
-      discord
     ];
 
     home.sessionVariables = {
