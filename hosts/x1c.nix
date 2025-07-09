@@ -93,7 +93,6 @@
     git
     wget
     tmux
-    waybar
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -127,6 +126,8 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
+
+  programs.waybar.enable = true;
 
   hardware.graphics = {
     enable = true;

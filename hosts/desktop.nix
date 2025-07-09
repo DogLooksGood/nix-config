@@ -109,6 +109,35 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  # Nekoray VPN
+  programs.nekoray = {
+    enable = true;
+    tunMode.enable = true;
+  };
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+  };
+
+  programs.waybar.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-vaapi-driver
+      vpl-gpu-rt
+    ];
+  };
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
