@@ -94,7 +94,13 @@
     git
     wget
     tmux
+    btop-cuda
   ];
+
+  services.ollama =  {
+    enable = true;
+    acceleration = "cuda";
+  };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
