@@ -33,7 +33,6 @@
          "on-click": "pavucontrol"
     },
     "network": {
-         "interface": "wlp0s20f3",
          "format": "{ifname}",
          "format-wifi": "{essid} ({signalStrength}%) ",
          "format-ethernet": "{ifname} ",
