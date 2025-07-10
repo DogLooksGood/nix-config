@@ -22,7 +22,6 @@
       pass
       zip
       file
-      btop
       gh
       acpi
       wlr-randr
@@ -38,6 +37,8 @@
       ripgrep
       brave
       slack
+      mpv
+      yt-dlp
     ];
 
     home.sessionVariables = {
