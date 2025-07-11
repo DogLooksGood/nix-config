@@ -77,6 +77,8 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+  # Enable XWayland
+  programs.xwayland.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -95,14 +97,13 @@
     wget
     tmux
     btop-cuda
+    waybar
   ];
 
   services.ollama =  {
     enable = true;
     acceleration = "cuda";
   };
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
     font-awesome
@@ -129,12 +130,14 @@
     enableSSHSupport = true;
   };
 
+  programs.labwc = {
+    enable = true;
+  };
+
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
   };
-
-  programs.waybar.enable = true;
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
