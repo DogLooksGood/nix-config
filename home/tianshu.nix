@@ -45,7 +45,8 @@
 
     home.sessionVariables = {
       EDITOR = "emacs";
-      HTTPS_PROXY = "http://127.0.0.1:2080";
+      ALL_PROXY="http://127.0.0.1:2080";
+      HTTPS_PROXY="https://127.0.0.1:2080";
     };
 
     home.pointerCursor = {
