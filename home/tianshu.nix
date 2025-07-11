@@ -38,7 +38,9 @@
       brave
       slack
       mpv
+      usbutils
       yt-dlp
+      solana-cli
     ];
 
     home.sessionVariables = {
