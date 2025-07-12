@@ -40,6 +40,8 @@
       mpv
       usbutils
       usb-modeswitch
+      usb-modeswitch-data
+      pciutils
       yt-dlp
       solana-cli
       libresprite
