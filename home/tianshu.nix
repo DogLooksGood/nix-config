@@ -39,8 +39,10 @@
       slack
       mpv
       usbutils
+      usb-modeswitch
       yt-dlp
       solana-cli
+      libresprite
     ];
 
     home.sessionVariables = {
