@@ -103,6 +103,7 @@
   services.ollama =  {
     enable = true;
     acceleration = "cuda";
+    host = "[::]";
   };
 
   fonts.packages = with pkgs; [
