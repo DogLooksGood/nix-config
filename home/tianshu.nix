@@ -86,6 +86,7 @@
       ".config/waybar" = { source = ../dotfiles/waybar; };
       ".config/foot" = { source = ../dotfiles/foot; };
       ".config/fuzzel" = { source = ../dotfiles/fuzzel; };
+      ".tmux.conf" = { source = ../dotfiles/tmux/.tmux.conf; };
     };
 
     services.kanshi.enable = true;
