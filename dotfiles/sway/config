@@ -18,6 +18,8 @@ bindsym $mod+h           focus left
 bindsym $mod+t           focus down
 bindsym $mod+c           focus up
 bindsym $mod+n           focus right
+bindsym Mod1+Tab         focus next sibling
+bindsym Mod1+Shift+Tab   focus prev sibling
 bindsym $mod+Shift+h     move left
 bindsym $mod+Shift+t     move down
 bindsym $mod+Shift+c     move up
