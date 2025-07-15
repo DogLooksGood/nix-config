@@ -1,0 +1,3 @@
+fcitx5 -d
+waybar &
+kanshi &

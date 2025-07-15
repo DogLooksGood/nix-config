@@ -88,6 +88,7 @@
       ".config/waybar" = { source = ../dotfiles/waybar; };
       ".config/foot" = { source = ../dotfiles/foot; };
       ".config/fuzzel" = { source = ../dotfiles/fuzzel; };
+      ".config/labwc" = { source = ../dotfiles/labwc; };
       ".tmux.conf" = { source = ../dotfiles/tmux/.tmux.conf; };
     };
 
