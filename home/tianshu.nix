@@ -6,6 +6,8 @@
     home.homeDirectory = "/home/tianshu";
 
     home.packages = with pkgs; [
+      man-pages
+      man-pages-posix
       mg
       git
       wget
