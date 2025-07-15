@@ -47,6 +47,8 @@
       yt-dlp
       solana-cli
       libresprite
+      zip
+      unzip
     ];
 
     home.sessionVariables = {
