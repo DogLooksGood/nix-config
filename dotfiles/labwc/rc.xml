@@ -111,6 +111,38 @@
     <keybind key="W-g">
       <action name="ToggleFullscreen" />
     </keybind>
+    <!-- Volumes -->
+    <keybind key="XF86AudioLowerVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ -5%" />
+    </keybind>
+    <keybind key="XF86AudioRaiseVolume">
+      <action name="Execute" command="pactl set-sink-volume @DEFAULT_SINK@ +5%" />
+    </keybind>
+    <keybind key="XF86AudioMute">
+      <action name="Execute" command="pactl set-sink-mute @DEFAULT_SINK@ toggle" />
+    </keybind>
+    <!-- Bridghtness -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute" command="brightnessctl set 2%+" />
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute" command="brightnessctl set 2%-" />
+    </keybind>
+    <!-- Screenshots -->
+    <keybind key="Print">
+      <action name="Execute">
+        <command>
+        sh -c 'grim -t jpeg - | wl-copy'
+        </command>
+    </action>
+    </keybind>
+    <keybind key="W-Print">
+      <action name="Execute">
+        <command>
+          sh -c 'grim -t jpeg -g "$(slurp)" - | wl-copy'
+        </command>
+      </action>
+    </keybind>
     <!-- Zooming -->
     <keybind key="W-a">
       <action name="ZoomIn" />
