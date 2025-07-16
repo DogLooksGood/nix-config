@@ -33,6 +33,7 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp7s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp8s0.useDHCP = lib.mkDefault true;
+  hardware.usb-modeswitch.enable = true;
 
   hardware.trackpoint.sensitivity = 255;
 
