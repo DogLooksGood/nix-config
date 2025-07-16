@@ -46,6 +46,11 @@
       fcitx5-gtk
     ];
   };
+
+  documentation = {
+    dev.enable = true;
+  };
+
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
   console.useXkbConfig = true;
