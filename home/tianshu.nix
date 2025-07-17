@@ -6,55 +6,60 @@
     home.homeDirectory = "/home/tianshu";
 
     home.packages = with pkgs; [
+      acpi
+      bluetui
+      brave
+      chromium
+      emacs-igc-pgtk
+      emacs-lsp-booster
+      fastfetch
+      ffmpeg
+      file
+      firefox
+      foot
+      fuzzel
+      gcc
+      gh
+      git
+      gnumake
+      grim
+      iw
+      killall
+      libnotify
+      libresprite
+      lshw
+      mako
       man-pages
       man-pages-posix
       mg
-      git
-      wget
-      tree
-      tmux
-      gcc
-      gnumake
-      grim
-      slurp
-      mako
-      foot
-      fuzzel
-      firefox
-      pass
-      zip
-      file
-      gh
-      acpi
-      wlr-randr
-      killall
-      bluetui
-      libnotify
-      wev
-      wl-clipboard
-      fastfetch
-      telegram-desktop
-      emacs-igc-pgtk
-      emacs-lsp-booster
-      ripgrep
-      brave
-      slack
       mpv
-      usbutils
+      pass
+      pciutils
+      ripgrep
+      slack
+      slurp
+      solana-cli
+      telegram-desktop
+      tmux
+      tokei
+      tree
+      unzip
       usb-modeswitch
       usb-modeswitch-data
-      pciutils
+      usbutils
+      wev
+      wget
+      wl-clipboard
+      wlr-randr
       yt-dlp
-      solana-cli
-      libresprite
       zip
-      unzip
+      zip
     ];
 
     home.sessionVariables = {
       EDITOR = "emacs";
       ALL_PROXY="http://127.0.0.1:2080";
-      HTTPS_PROXY="https://127.0.0.1:2080";
+      HTTPS_PROXY="http://127.0.0.1:2080";
     };
 
     home.pointerCursor = {
