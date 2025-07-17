@@ -78,7 +78,7 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable XWayland
-  programs.xwayland.enable = true;
+  # programs.xwayland.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
@@ -99,6 +99,8 @@
     btop-cuda
     waybar
   ];
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.ollama =  {
     enable = true;
@@ -141,8 +143,26 @@
   };
 
   hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;
+  hardware.graphics.enable32Bit = true;
+  hardware.graphics.extraPackages = with pkgs; [ rocmPackages.clr.icd ];
+
+  services.xserver.videoDrivers = [
+    "amdgpu"
+    "nvidia"
+  ];
+
+  hardware.nvidia = {
+    open = true;
+    modesetting.enable = true;
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+      sync.enable = false;
+
+      nvidiaBusId = "PCI:1:0:0";
+      amdgpuBusId = "PCI:74:0:0";
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
