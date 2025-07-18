@@ -176,6 +176,12 @@
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
 
+  # Disable the board bluetooth device
+  # Bus 001 Device 005: ID 0bda:8922 Realtek Semiconductor Corp. Bluetooth Radio
+  services.udev.extraRules = ''
+  SUBSYSTEM=="usb", ATTRS{idVendor}=="0bda", ATTRS{idProduct}=="8922", ATTR{authorized}="0"
+  '';
+
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.
