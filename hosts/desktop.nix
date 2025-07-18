@@ -142,6 +142,12 @@
     wrapperFeatures.gtk = true;
   };
 
+  programs.steam = {
+    enable = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
   hardware.graphics.extraPackages = with pkgs; [ rocmPackages.clr.icd ];
