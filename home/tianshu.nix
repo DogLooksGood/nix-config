@@ -82,7 +82,19 @@
         nix-direnv.enable = true;
       };
 
-      bash.enable = true; # see note on other shells below
+      bash = {
+        enable = true;
+        bashrcExtra = ''
+          PROMPT_COMMAND=__bash_prompt
+          function __bash_prompt {
+              if [[ -n $IN_NIX_SHELL ]]; then
+                  export PS1='\[\033[0;35m\][\u@\h:\w]$ \[\033[0m\]'
+              else
+                  export PS1='\[\033[0;32m\][\u@\h:\w]$ \[\033[0m\]'
+              fi
+          }
+        '';
+      };
     };
 
     programs.firefox.enable = true;
