@@ -98,6 +98,8 @@
     tmux
     btop-cuda
     waybar
+    podman-tui
+    podman-compose
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -115,6 +117,13 @@
     wqy_microhei
     nerd-fonts.bigblue-terminal
   ];
+
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
