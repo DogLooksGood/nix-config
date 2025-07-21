@@ -111,7 +111,7 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
-    nerd-fonts.bigblue-terminal
+    ultimate-oldschool-pc-font-pack
   ];
 
   virtualisation.containers.enable = true;
