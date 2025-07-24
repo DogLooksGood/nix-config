@@ -54,11 +54,6 @@
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
 
   console.useXkbConfig = true;
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
@@ -66,7 +61,6 @@
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "dvp";
-  services.xserver.xkb.options = "caps:ctrl_modifier";
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
