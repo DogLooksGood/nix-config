@@ -111,7 +111,7 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
-    ultimate-oldschool-pc-font-pack
+    ark-pixel-font
   ];
 
   virtualisation.containers.enable = true;

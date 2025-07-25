@@ -19,14 +19,18 @@
       foot
       fuzzel
       gcc
+      gdb
       gh
       git
+      global
       gnumake
       grim
+      guile
       iw
       killall
       libnotify
       libresprite
+      libwebp
       lshw
       mako
       man-pages

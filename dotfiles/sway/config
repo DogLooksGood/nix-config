@@ -11,6 +11,7 @@ bindsym XF86SelectiveScreenshot       exec grim -t jpeg -g "$(slurp -d)" - | wl-
 bindsym Shift+XF86SelectiveScreenshot exec grim -t jpeg -g "$(slurp -d)" ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
 bindsym Print                         exec grim -t jpeg - | wl-copy
 bindsym Shift+Print                   exec grim -t jpeg ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+bindsym $mod+Print                    exec grim -t jpeg -g "$(slurp -d)" - | wl-copy
 # bindsym XF86Assistant                 exec fuzzel
 
 bindsym $mod+q           kill
@@ -79,5 +80,5 @@ input type:keyboard {
   repeat_rate 40
   xkb_layout "us"
   xkb_variant "dvp"
-  xkb_options caps:ctrl_modifier
+  # xkb_options caps:ctrl_modifier
 }

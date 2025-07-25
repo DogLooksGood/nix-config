@@ -115,7 +115,7 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
-    ultimate-oldschool-pc-font-pack
+    ark-pixel-font
   ];
 
   virtualisation.containers.enable = true;
@@ -166,13 +166,18 @@
     "nvidia"
   ];
 
+  qt = {
+    enable = true;
+    style = "kvantum";
+  };
+
   hardware.nvidia = {
     open = true;
     modesetting.enable = true;
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
-      sync.enable = false;
+      # sync.enable = false;
 
       nvidiaBusId = "PCI:1:0:0";
       amdgpuBusId = "PCI:74:0:0";
