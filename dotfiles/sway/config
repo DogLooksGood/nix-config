@@ -74,6 +74,9 @@ include /etc/sway/config.d/nixos.conf
 input type:touchpad {
   natural_scroll enabled
 }
+input "1:1:AT_Translated_Set_2_keyboard" {
+  xkb_options ctrl:ralt_rctrl
+}
 
 input type:keyboard {
   repeat_delay 200
