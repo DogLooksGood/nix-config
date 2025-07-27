@@ -113,6 +113,7 @@
       ".config/fuzzel" = { source = ../dotfiles/fuzzel; };
       ".config/labwc" = { source = ../dotfiles/labwc; };
       ".tmux.conf" = { source = ../dotfiles/tmux/.tmux.conf; };
+      ".guile" = { source = ../dotfiles/guile/.guile; };
     };
 
     services.kanshi.enable = true;
