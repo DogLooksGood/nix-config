@@ -40,6 +40,7 @@
       pass
       pciutils
       ripgrep
+      simple-http-server
       slack
       slurp
       solana-cli
