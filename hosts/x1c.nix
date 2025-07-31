@@ -112,6 +112,7 @@
     nerd-fonts.arimo
     wqy_microhei
     ark-pixel-font
+    nerd-fonts.bigblue-terminal
   ];
 
   virtualisation.containers.enable = true;

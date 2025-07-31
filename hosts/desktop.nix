@@ -100,6 +100,7 @@
     waybar
     podman-tui
     podman-compose
+    via
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -115,7 +116,8 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
-    ark-pixel-font
+    ultimate-oldschool-pc-font-pack
+    nerd-fonts.bigblue-terminal
   ];
 
   virtualisation.containers.enable = true;
@@ -126,7 +128,16 @@
   };
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 22 ];
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = [ "tianshu" ];
+      UseDns = true;
+      X11Forwarding = false;
+    };
+  };
 
   # Nekoray VPN
   programs.nekoray = {
@@ -189,6 +200,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
+
+  # Enable QMK
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = with pkgs; [ via ];
 
   # Disable the board bluetooth device
   # Bus 001 Device 005: ID 0bda:8922 Realtek Semiconductor Corp. Bluetooth Radio
