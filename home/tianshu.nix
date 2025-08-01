@@ -39,6 +39,7 @@
       man-pages-posix
       mg
       mpv
+      mypaint
       pass
       pciutils
       ripgrep
