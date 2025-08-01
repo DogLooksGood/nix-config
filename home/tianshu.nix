@@ -26,6 +26,7 @@
       gnumake
       grim
       guile
+      guile.info
       iw
       killall
       libnotify
