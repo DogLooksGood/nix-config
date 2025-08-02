@@ -72,8 +72,8 @@
     };
 
     home.pointerCursor = {
-      name = "phinger-cursors-light";
-      package = pkgs.phinger-cursors;
+      name = "XCursor-Pro-Red";
+      package = pkgs.xcursor-pro;
       size = 32;
       gtk.enable = true;
     };
