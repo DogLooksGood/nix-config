@@ -52,6 +52,7 @@
       tokei
       tree
       unzip
+      wineWowPackages.waylandFull
       usb-modeswitch
       usb-modeswitch-data
       usbutils
