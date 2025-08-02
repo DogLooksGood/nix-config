@@ -10,8 +10,8 @@
   </placement>
 
   <theme>
-    <name></name>
-    <cornerRadius>8</cornerRadius>
+    <name>carbon</name>
+    <cornerRadius>0</cornerRadius>
     <font name="DejaVu Sans" size="10" />
   </theme>
 

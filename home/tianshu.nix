@@ -27,6 +27,7 @@
       grim
       guile
       guile.info
+      inkscape
       iw
       killall
       libnotify
@@ -106,7 +107,6 @@
     programs.firefox.enable = true;
 
     home.file = {
-      ".config/kanshi" = { source = ../dotfiles/kanshi; };
       ".config/zellij" = { source = ../dotfiles/zellij; };
       ".config/containers" = { source = ../dotfiles/containers; };
       ".config/sway" = { source = ../dotfiles/sway; };
