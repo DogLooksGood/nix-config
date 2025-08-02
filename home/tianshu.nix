@@ -63,6 +63,7 @@
       yt-dlp
       zip
       zip
+      swww
     ];
 
     home.sessionVariables = {
