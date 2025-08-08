@@ -116,7 +116,6 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
-    ultimate-oldschool-pc-font-pack
     nerd-fonts.bigblue-terminal
   ];
 
@@ -204,6 +203,14 @@
   # Enable QMK
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = with pkgs; [ via ];
+
+  # Increase ulimit
+  security.pam.loginLimits = [{
+    domain = "*";
+    type = "soft";
+    item = "nofile";
+    value = "8192";
+  }];
 
   # Disable the board bluetooth device
   # Bus 001 Device 005: ID 0bda:8922 Realtek Semiconductor Corp. Bluetooth Radio
