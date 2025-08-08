@@ -98,6 +98,11 @@
     podman-compose
   ];
 
+  qt = {
+    enable = true;
+    style = "kvantum";
+  };
+
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
