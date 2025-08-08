@@ -40,6 +40,7 @@
       mg
       mpv
       mypaint
+      obs-studio
       pass
       pciutils
       ripgrep
