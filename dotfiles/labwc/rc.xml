@@ -6,13 +6,14 @@
   </core>
 
   <placement>
-    <policy>automatic</policy>
+    <policy>cascade</policy>
+    <cascadeOffset x="40" y="30" />
   </placement>
 
   <theme>
     <name>carbon</name>
     <cornerRadius>0</cornerRadius>
-    <font name="DejaVu Sans" size="10" />
+    <font name="Unifont" size="12" />
   </theme>
 
   <desktops number="5" />
