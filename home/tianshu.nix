@@ -27,6 +27,7 @@
       grim
       guile
       guile.info
+      inetutils
       inkscape
       iw
       killall
@@ -61,10 +62,12 @@
       wget
       wl-clipboard
       wlr-randr
+      wtype
       yt-dlp
       zip
       zip
       swww
+      (writeScriptBin "fuzzel-pass" (builtins.readFile ../dotfiles/bash/fuzzel-pass.sh))
     ];
 
     home.sessionVariables = {

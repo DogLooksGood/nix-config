@@ -12,8 +12,8 @@ bindsym Shift+XF86SelectiveScreenshot exec grim -t jpeg -g "$(slurp -d)" ~/Scree
 bindsym Print                         exec grim -t jpeg - | wl-copy
 bindsym Shift+Print                   exec grim -t jpeg ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
 bindsym $mod+Print                    exec grim -t jpeg -g "$(slurp -d)" - | wl-copy
-bindsym XF86Assistant                 exec fuzzel
-bindsym $mod+XF86Tools                exec fuzzel
+bindsym XF86Assistant                 exec bash fuzzel-pass
+bindsym $mod+p                        exec bash fuzzel-pass
 
 bindsym $mod+q           kill
 bindsym $mod+h           focus left
