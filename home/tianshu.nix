@@ -127,6 +127,10 @@
       ".config/labwc" = { source = ../dotfiles/labwc; };
       ".tmux.conf" = { source = ../dotfiles/tmux/.tmux.conf; };
       ".guile" = { source = ../dotfiles/guile/.guile; };
+      ".emacs.d/init.el" = { source = ../dotfiles/emacs/init.el; };
+      ".emacs.d/custom.el" = { source = ../dotfiles/emacs/custom.el; };
+      ".emacs.d/site-lisp" = { source = ../dotfiles/emacs/site-lisp; };
+      ".emacs.d/snippets" = { source = ../dotfiles/emacs/snippets; };
     };
 
     services.kanshi.enable = true;
