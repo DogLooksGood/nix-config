@@ -21,7 +21,7 @@ __bash_prompt() {
         echo "$ps1\[\033[0m\] "
     }
 
-    if [[ -n $IN_NIX_SHELL ]]; then
+    if [[ -n $IN_NIX_SHELL || -n $GUIX_ENVIRONMENT ]]; then
         export PS1="$(build 208 209 210 211 212 213 177 141 105 69)"
     else
         export PS1="$(build 184 148 112 76 40 41 42 43 44 45)"

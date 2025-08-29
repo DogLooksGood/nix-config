@@ -110,6 +110,7 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
+    iosevka
     nerd-fonts.bigblue-terminal
   ];
 
@@ -156,6 +157,8 @@
   };
 
   services.tlp.enable = true;
+
+  services.guix.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
