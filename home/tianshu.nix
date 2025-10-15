@@ -7,11 +7,12 @@
 
     home.packages = with pkgs; [
       acpi
+      blender
       bluetui
       brave
       chromium
+      cmake
       emacs-igc-pgtk
-      emacs-lsp-booster
       fastfetch
       ffmpeg
       file
@@ -27,6 +28,8 @@
       grim
       guile
       guile.info
+      guile.dev
+      hidapi
       inetutils
       inkscape
       iw
@@ -44,6 +47,8 @@
       obs-studio
       pass
       pciutils
+      pinfo
+      pkg-config
       ripgrep
       simple-http-server
       slack
@@ -53,11 +58,13 @@
       tmux
       tokei
       tree
+      undetected-chromedriver
       unzip
       wineWowPackages.waylandFull
       usb-modeswitch
       usb-modeswitch-data
       usbutils
+      weechat
       wev
       wget
       wl-clipboard
@@ -74,6 +81,8 @@
       EDITOR = "emacs";
       ALL_PROXY="http://127.0.0.1:2080";
       HTTPS_PROXY="http://127.0.0.1:2080";
+      use_proxy="on"; # for wget
+      https_proxy="http://127.0.0.1:2080";
     };
 
     home.pointerCursor = {
