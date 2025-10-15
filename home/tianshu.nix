@@ -7,7 +7,6 @@
 
     home.packages = with pkgs; [
       acpi
-      android-studio-full
       blender
       bluetui
       brave
