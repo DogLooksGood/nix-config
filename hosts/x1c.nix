@@ -110,6 +110,7 @@
     noto-fonts
     nerd-fonts.arimo
     wqy_microhei
+    inconsolata
     iosevka
     nerd-fonts.bigblue-terminal
   ];

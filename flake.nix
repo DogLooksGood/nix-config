@@ -17,7 +17,10 @@
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          android_sdk.accept_license = true;
+        };
         overlays = [ emacs-overlay.overlays.emacs ];
       };
     in

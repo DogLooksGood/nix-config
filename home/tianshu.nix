@@ -7,6 +7,7 @@
 
     home.packages = with pkgs; [
       acpi
+      android-studio-full
       blender
       bluetui
       brave
@@ -75,7 +76,6 @@
       zip
       swww
       swappy
-      (writeScriptBin "fuzzel-pass" (builtins.readFile ../dotfiles/bash/fuzzel-pass.sh))
     ];
 
     home.sessionVariables = {
