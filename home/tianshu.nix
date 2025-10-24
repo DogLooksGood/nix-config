@@ -30,6 +30,7 @@
       guile.info
       guile.dev
       hidapi
+      hmcl
       inetutils
       inkscape
       iw
