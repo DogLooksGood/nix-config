@@ -10,6 +10,7 @@
       blender
       bluetui
       brave
+      bitcoin
       chromium
       cmake
       emacs-igc-pgtk

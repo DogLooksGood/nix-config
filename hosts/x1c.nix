@@ -125,9 +125,6 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-  # Enable tailscale
-  services.tailscale.enable = true;
-
   # Nekoray VPN
   programs.nekoray = {
     enable = true;
