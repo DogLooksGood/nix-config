@@ -9,7 +9,6 @@
       acpi
       blender
       bluetui
-      brave
       bitcoin
       chromium
       cmake
@@ -62,11 +61,9 @@
       tree
       undetected-chromedriver
       unzip
-      wineWowPackages.waylandFull
       usb-modeswitch
       usb-modeswitch-data
       usbutils
-      weechat
       wev
       wget
       wl-clipboard
