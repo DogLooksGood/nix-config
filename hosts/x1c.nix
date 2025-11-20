@@ -76,6 +76,8 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
+  powerManagement.powertop.enable = true;
+
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
@@ -112,7 +114,7 @@
     wqy_microhei
     inconsolata
     iosevka
-    nerd-fonts.bigblue-terminal
+    departure-mono
   ];
 
   virtualisation.containers.enable = true;

@@ -7,11 +7,14 @@
 
     home.packages = with pkgs; [
       acpi
+      autoconf
+      automake
       blender
       bluetui
       bitcoin
       chromium
       cmake
+      drawio
       emacs-igc-pgtk
       fastfetch
       ffmpeg
@@ -24,6 +27,7 @@
       gh
       git
       global
+      gnum4
       gnumake
       grim
       guile
@@ -37,6 +41,7 @@
       killall
       libnotify
       libresprite
+      libtool
       libwebp
       lshw
       mako
@@ -52,10 +57,10 @@
       pkg-config
       ripgrep
       simple-http-server
-      slack
       slurp
       solana-cli
       telegram-desktop
+      texliveMedium
       tmux
       tokei
       tree

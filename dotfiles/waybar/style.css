@@ -1,11 +1,21 @@
 * {
-    background-color: black;
+    font-family: 'Iosevka Extended', 'Font Awesome 6 Free';
+    background-color: #171717;
+}
+
+#clock {
+    margin-left: 4px;
+    margin-right: 2px;
+}
+
+#bluetooth, #battery, #network, #pulseaudio, #backlight {
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 #bluetooth, #clock, #battery, #network, #pulseaudio, #backlight {
-    font-size: 12px;
+    font-size: 14px;
     color: white;
-    margin-right: 16px;
 }
 
 #window {
@@ -20,15 +30,14 @@
 
 #workspaces button {
     font-size: 10px;
-    color: white;
     padding: 0px;
     margin: 2px;
     border-radius: 0;
-    color: gray;
 }
 
 #workspaces button.urgent {
     color: red;
+    border-color: red;
 }
 
 #workspaces button.current_output {
@@ -36,6 +45,6 @@
 }
 
 #workspaces button.focused {
-    border-width: 1px;
+    border-width: 2px;
     border-color: white;
 }
