@@ -48,6 +48,7 @@
       man-pages
       man-pages-posix
       mg
+      mindustry-wayland
       mpv
       mypaint
       obs-studio
