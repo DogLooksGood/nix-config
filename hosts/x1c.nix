@@ -115,6 +115,12 @@
     inconsolata
     iosevka
     departure-mono
+    fira-code
+    comic-mono
+    meslo-lg
+    nerd-fonts.bigblue-terminal
+    fixedsys-excelsior
+    ibm-plex
   ];
 
   virtualisation.containers.enable = true;
@@ -156,6 +162,12 @@
       intel-vaapi-driver
       vpl-gpu-rt
     ];
+  };
+
+  programs.steam = {
+    enable = true;
+    dedicatedServer.openFirewall = true;
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
   };
 
   services.tlp.enable = true;

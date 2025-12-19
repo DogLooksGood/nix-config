@@ -54,12 +54,17 @@
       obs-studio
       pass
       pciutils
+      lxqt.pcmanfm-qt
       pinfo
       pkg-config
+      qemacs
       ripgrep
+      shared-mime-info
+      sigil
       simple-http-server
       slurp
       solana-cli
+      tango-icon-theme
       telegram-desktop
       texliveMedium
       tmux
@@ -70,6 +75,7 @@
       usb-modeswitch
       usb-modeswitch-data
       usbutils
+      valgrind
       wev
       wget
       wl-clipboard
@@ -88,6 +94,14 @@
       HTTPS_PROXY="http://127.0.0.1:2080";
       use_proxy="on"; # for wget
       https_proxy="http://127.0.0.1:2080";
+    };
+
+    gtk = {
+      enable = true;
+      iconTheme = {
+        name = "Tango"; # The internal name of the theme
+        package = pkgs.tango; # The Nix package containing it
+      };
     };
 
     home.pointerCursor = {
@@ -132,7 +146,6 @@
       ".config/labwc" = { source = ../dotfiles/labwc; };
       ".tmux.conf" = { source = ../dotfiles/tmux/.tmux.conf; };
       ".guile" = { source = ../dotfiles/guile/.guile; };
-      ".direnvrc" = { source = ../dotfiles/direnv/.direnvrc; };
     };
 
     services.kanshi.enable = true;
