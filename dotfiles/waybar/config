@@ -11,6 +11,31 @@
     "tooltip": true,
     "tooltip-format": "{app}: {title}"
   },
+  "wlr/taskbar": {
+     "format": "{icon}",
+     "icon-size": 14,
+     "icon-theme": "Numix-Circle",
+     "tooltip-format": "{title}",
+     "on-click": "activate",
+     "on-click-middle": "close",
+     "rewrite": {
+          "Firefox Web Browser": "Firefox",
+          "Foot Server": "Terminal"
+     }
+  },
+  "wlr/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"1": "",
+		"2": "",
+		"3": "",
+		"4": "",
+		"5": "",
+		"active": "",
+		"default": ""
+	},
+	"sort-by-number": true
+  },
   "backlight": {
     "device": "intel_backlight",
     "format": "{percent}% {icon}",

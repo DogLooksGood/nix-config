@@ -7,10 +7,10 @@ bindsym XF86AudioRaiseVolume          exec pactl set-sink-volume @DEFAULT_SINK@ 
 bindsym XF86AudioMute                 exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86MonBrightnessUp           exec brightnessctl set 2%+
 bindsym XF86MonBrightnessDown         exec brightnessctl set 2%-
-bindsym XF86SelectiveScreenshot       exec grim -t jpeg -g "$(slurp -d)" - | wl-copy
-bindsym Shift+XF86SelectiveScreenshot exec grim -t jpeg -g "$(slurp -d)" ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
-bindsym Print                         exec grim -t jpeg - | wl-copy
-bindsym Shift+Print                   exec grim -t jpeg ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg
+bindsym XF86SelectiveScreenshot       exec grim -g "$(slurp -d)" - | wl-copy
+bindsym Shift+XF86SelectiveScreenshot exec grim -g "$(slurp -d)" "~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg"
+bindsym Print                         exec grim - | wl-copy
+bindsym Shift+Print                   exec grim "~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg"
 bindsym $mod+Print                    exec grim -t jpeg -g "$(slurp -d)" - | wl-copy
 bindsym XF86Assistant                 exec bash fuzzel-pass
 bindsym $mod+p                        exec bash fuzzel-pass

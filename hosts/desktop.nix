@@ -111,10 +111,8 @@
     wget
     tmux
     btop-cuda
-    waybar
     podman-tui
     podman-compose
-    via
   ];
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -161,7 +159,7 @@
   };
 
   # Nekoray VPN
-  programs.nekoray = {
+  programs.throne = {
     enable = true;
     tunMode.enable = true;
   };

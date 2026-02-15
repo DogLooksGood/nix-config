@@ -7,15 +7,14 @@
 
     home.packages = with pkgs; [
       acpi
+      aria2
       autoconf
       automake
       blender
       bluetui
-      bitcoin
-      chromium
       cmake
       drawio
-      emacs-igc-pgtk
+      emacs-pgtk
       fastfetch
       ffmpeg
       file
@@ -26,7 +25,6 @@
       gdb
       gh
       git
-      global
       gnum4
       gnumake
       grim
@@ -48,9 +46,7 @@
       man-pages
       man-pages-posix
       mg
-      mindustry-wayland
       mpv
-      mypaint
       obs-studio
       pass
       pciutils
@@ -64,18 +60,19 @@
       simple-http-server
       slurp
       solana-cli
+      sqlite
       tango-icon-theme
       telegram-desktop
       texliveMedium
       tmux
       tokei
       tree
-      undetected-chromedriver
       unzip
       usb-modeswitch
       usb-modeswitch-data
       usbutils
       valgrind
+      waybar
       wev
       wget
       wl-clipboard
@@ -113,8 +110,10 @@
 
     programs.git = {
       enable = true;
-      userName = "DogLooksGood";
-      userEmail = "doglooksgood@gmail.com";
+      settings.user = {
+        name = "DogLooksGood";
+        email = "doglooksgood@gmail.com";
+      };
     };
 
     programs = {

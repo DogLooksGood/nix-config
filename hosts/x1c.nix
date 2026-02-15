@@ -55,8 +55,14 @@
 
   console.useXkbConfig = true;
 
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
+  # services.xserver = {
+  #   enable = true;
+  #   desktopManager.lxqt.enable = true;
+  # };
+
+  # services = {
+  #   displayManager.ly.enable = true;
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb.layout = "us";
@@ -84,7 +90,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.tianshu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "podman" ]; # Enable ‘sudo’ for the user.
   };
 
   # List packages installed in system profile.
@@ -95,7 +101,6 @@
     wget
     tmux
     btop
-    waybar
     podman-tui
     podman-compose
   ];
@@ -116,11 +121,9 @@
     iosevka
     departure-mono
     fira-code
-    comic-mono
     meslo-lg
     nerd-fonts.bigblue-terminal
     fixedsys-excelsior
-    ibm-plex
   ];
 
   virtualisation.containers.enable = true;
@@ -134,7 +137,7 @@
   # services.openssh.enable = true;
 
   # Nekoray VPN
-  programs.nekoray = {
+  programs.throne = {
     enable = true;
     tunMode.enable = true;
   };
