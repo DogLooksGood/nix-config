@@ -12,6 +12,7 @@
       automake
       blender
       bluetui
+      chez
       cmake
       drawio
       emacs-pgtk

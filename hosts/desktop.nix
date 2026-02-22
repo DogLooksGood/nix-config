@@ -71,9 +71,31 @@
   # OR
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
+    wireplumber.extraConfig."99-disable-suspend" = {
+      "monitor.alsa.rules" = [
+        {
+          matches = [
+            {
+              "node.name" = "~alsa_input.*";
+            }
+            {
+              "node.name" = "~alsa_output.*";
+            }
+          ];
+          actions = {
+            update-props = {
+              "session.suspend-timeout-seconds" = 0;
+            };
+          };
+        }
+      ];
+    };
   };
 
+  hardware.pulseaudio.extraConfig = "unload-module module-suspend-on-idle";
   hardware.xpadneo.enable = true;
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
@@ -117,9 +139,9 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  services.ollama =  {
+  services.ollama = {
     enable = true;
-    acceleration = "cuda";
+    package = pkgs.ollama-cuda;
     host = "[::]";
   };
 
