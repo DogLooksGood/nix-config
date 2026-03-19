@@ -34,6 +34,7 @@
       guile.dev
       hidapi
       hmcl
+      httrack
       inetutils
       inkscape
       iw
@@ -111,9 +112,14 @@
 
     programs.git = {
       enable = true;
-      settings.user = {
-        name = "DogLooksGood";
-        email = "doglooksgood@gmail.com";
+      settings = {
+        user = {
+          name = "DogLooksGood";
+          email = "doglooksgood@gmail.com";
+        };
+        core = {
+          excludesFile = "~/.gitignore_global";
+        };
       };
     };
 
