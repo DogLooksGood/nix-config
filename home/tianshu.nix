@@ -14,7 +14,6 @@
       bluetui
       chez
       cmake
-      drawio
       emacs-pgtk
       fastfetch
       ffmpeg
@@ -31,7 +30,6 @@
       grim
       guile
       guile.info
-      guile.dev
       hidapi
       hmcl
       httrack
@@ -40,6 +38,7 @@
       iw
       killall
       libnotify
+      libreoffice-qt
       libresprite
       libtool
       libwebp
@@ -54,8 +53,7 @@
       pciutils
       lxqt.pcmanfm-qt
       pinfo
-      pkg-config
-      qemacs
+      qpdfview
       ripgrep
       shared-mime-info
       sigil
@@ -63,9 +61,11 @@
       slurp
       solana-cli
       sqlite
+      sqlitebrowser
       tango-icon-theme
       telegram-desktop
       texliveMedium
+      time
       tmux
       tokei
       tree
