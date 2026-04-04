@@ -7,6 +7,7 @@
 
     home.packages = with pkgs; [
       acpi
+      alt-ergo
       aria2
       autoconf
       automake
@@ -14,6 +15,7 @@
       bluetui
       chez
       cmake
+      cvc4
       emacs-pgtk
       fastfetch
       ffmpeg
@@ -44,6 +46,7 @@
       libtool
       libwebp
       lshw
+      schemesh
       mako
       man-pages
       man-pages-posix
@@ -79,6 +82,7 @@
       waybar
       wev
       wget
+      why3
       wl-clipboard
       wlr-randr
       wtype

@@ -21,7 +21,12 @@
           allowUnfree = true;
           android_sdk.accept_license = true;
         };
-        overlays = [ emacs-overlay.overlays.emacs ];
+        overlays = [
+          emacs-overlay.overlays.emacs
+          (final: prev: {
+            schemesh = prev.callPackage ./drvs/schemesh.nix { };
+          })
+        ];
       };
     in
       {
