@@ -29,6 +29,7 @@
       gnumake
       grim
       guile
+      guile.dev
       guile.info
       hidapi
       hmcl
@@ -73,6 +74,7 @@
       usb-modeswitch
       usb-modeswitch-data
       usbutils
+      util-linux
       valgrind
       waybar
       wev
