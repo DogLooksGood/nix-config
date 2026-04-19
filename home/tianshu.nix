@@ -6,38 +6,108 @@
     home.homeDirectory = "/home/tianshu";
 
     home.packages = with pkgs; [
-      alt-ergo
+      acpi
+      aria2
+      autoconf
+      automake
+      awww
       blender
-      cvc4
-      drawio
+      bluetui
+      chez
+      cmake
+      emacs-pgtk
+      fastfetch
+      ffmpeg
+      file
+      firefox
+      foot
+      fuzzel
+      gcc
+      gdb
+      gh
+      git
+      gnum4
+      gnumake
+      grim
+      guile
+      guile.dev
+      guile.info
       hidapi
+      hmcl
       httrack
+      inetutils
       inkscape
+      iw
+      killall
+      libnotify
+      libreoffice-qt
+      libresprite
+      libtool
+      libwebp
+      lshw
+      mako
+      man-pages
+      man-pages-posix
+      mg
+      mpv
       obs-studio
-      why3
+      pass
+      pciutils
+      lxqt.pcmanfm-qt
+      pinfo
+      qpdfview
+      ripgrep
+      shared-mime-info
+      sigil
+      simple-http-server
+      slurp
+      sqlite
+      sqlitebrowser
+      tango-icon-theme
+      telegram-desktop
+      texliveMedium
+      time
+      tmux
+      tokei
+      tree
+      typst
+      unzip
+      usb-modeswitch
+      usb-modeswitch-data
+      usbutils
+      util-linux
+      valgrind
+      waybar
+      wev
+      wget
+      wl-clipboard
+      wlr-randr
+      wtype
       yt-dlp
-      schemesh
+      zip
+      zip
+      swappy
     ];
 
     home.sessionVariables = {
-      EDITOR = "emacsclient";
-      ALL_PROXY = "http://127.0.0.1:2080";
-      HTTPS_PROXY = "http://127.0.0.1:2080";
-      NO_PROXY = "localhost,127.0.0.1,::1,.local,.lan,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16";
-      use_proxy = "on"; # for wget
-      https_proxy = "http://127.0.0.1:2080";
+      EDITOR = "emacs";
+      ALL_PROXY="http://127.0.0.1:2080";
+      HTTPS_PROXY="http://127.0.0.1:2080";
+      use_proxy="on"; # for wget
+      https_proxy="http://127.0.0.1:2080";
     };
 
     gtk = {
+      gtk4.theme = null;
       enable = true;
       iconTheme = {
-        name = "Tango";
-        package = pkgs.tango;
+        name = "Tango"; # The internal name of the theme
+        package = pkgs.tango; # The Nix package containing it
       };
     };
 
     home.pointerCursor = {
-      name = "XCursor-Pro-Light";
+      name = "XCursor-Pro-Red";
       package = pkgs.xcursor-pro;
       size = 32;
       gtk.enable = true;
@@ -66,6 +136,8 @@
       bash = {
         enable = true;
         bashrcExtra = ''
+          PROMPT_COMMAND=__bash_prompt
+          source ${../dotfiles/bash/prompt.sh}
           source ${../dotfiles/bash/osc7_cwd.sh}
         '';
       };
