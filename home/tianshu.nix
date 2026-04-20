@@ -10,12 +10,13 @@
       aria2
       autoconf
       automake
-      awww
+      swww
       blender
       bluetui
       chez
+      chez-srfi
       cmake
-      emacs-pgtk
+      emacs-unstable-pgtk
       fastfetch
       ffmpeg
       file
@@ -95,6 +96,7 @@
       HTTPS_PROXY="http://127.0.0.1:2080";
       use_proxy="on"; # for wget
       https_proxy="http://127.0.0.1:2080";
+      CHEZSCHEMELIBDIRS="${pkgs.chez-srfi}/lib/csv10.3-site";
     };
 
     gtk = {

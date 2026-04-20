@@ -140,12 +140,6 @@
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-cuda;
-    host = "[::]";
-  };
-
   fonts.packages = with pkgs; [
     font-awesome
     noto-fonts
