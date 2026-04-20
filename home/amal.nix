@@ -36,11 +36,6 @@
 
     programs.git = {
       enable = true;
-      settings = {
-        core = {
-          excludesFile = "~/.gitignore_global";
-        };
-      };
     };
 
     programs = {

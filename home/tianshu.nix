@@ -16,7 +16,7 @@
       chez
       chez-srfi
       cmake
-      emacs-unstable-pgtk
+      emacs-pgtk
       fastfetch
       ffmpeg
       file
@@ -25,7 +25,6 @@
       fuzzel
       gcc
       gdb
-      gh
       git
       gnum4
       gnumake
@@ -66,7 +65,6 @@
       sqlitebrowser
       tango-icon-theme
       telegram-desktop
-      texliveMedium
       time
       tmux
       tokei

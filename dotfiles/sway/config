@@ -83,6 +83,9 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 input "1278:22:HHKB-Studio2_Keyboard" {
   xkb_options "altwin:swap_alt_win"
 }
+input "1278:22:HHKB-Studio1_Keyboard" {
+  xkb_options "altwin:swap_alt_win"
+}
 
 input type:keyboard {
   repeat_delay 200
