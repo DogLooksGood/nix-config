@@ -16,6 +16,7 @@
       chez
       cmake
       cvc4
+      drawio
       emacs-pgtk
       fastfetch
       ffmpeg
@@ -86,6 +87,7 @@
       wl-clipboard
       wlr-randr
       wtype
+      xeyes
       yt-dlp
       zip
       zip

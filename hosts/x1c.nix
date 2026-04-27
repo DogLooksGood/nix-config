@@ -11,6 +11,11 @@
       ../cachix.nix
     ];
 
+  nix.settings = {
+    trusted-users = [ "root" "tianshu" ];
+    substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+  };
+
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -132,6 +137,9 @@
     dockerCompat = true;
     defaultNetwork.settings.dns_enabled = true;
   };
+  virtualisation.containers.registries.search = [
+    "docker.io"
+  ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

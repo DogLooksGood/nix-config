@@ -10,7 +10,7 @@ __bash_prompt() {
         local len=$(expr ${#USER} + ${#HOSTNAME} + ${#w} + 5)
         local origin="[$USER@$HOSTNAME:$(dirs +0)]$"
         local origin_len=${#origin}
-        local seglen=$(( ( origin_len + 7 ) / $colors_len ))
+        local seglen=$(( ( origin_len + colors_len - 1 ) / colors_len ))
         local ps1=''
         for (( i=0; i<$colors_len; i++ )); do
             local clr=${colors[i]}
