@@ -99,6 +99,7 @@
       EDITOR = "emacs";
       ALL_PROXY="http://127.0.0.1:2080";
       HTTPS_PROXY="http://127.0.0.1:2080";
+      NO_PROXY="localhost,127.0.0.1,::1,.local,.lan,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16";
       use_proxy="on"; # for wget
       https_proxy="http://127.0.0.1:2080";
     };
