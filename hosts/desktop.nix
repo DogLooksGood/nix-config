@@ -8,64 +8,16 @@
   imports =
     [
       ../hardware-configuration/desktop.nix
+      ./base.nix
       ../cachix.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "desktop"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
+  environment.systemPackages = with pkgs; [
+    btop-cuda
+  ];
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      rime-data
-      fcitx5-rime
-      fcitx5-gtk
-    ];
-  };
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
-
-  console.useXkbConfig = true;
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "dvp";
-  services.xserver.xkb.options = "caps:ctrl_modifier";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -110,59 +62,10 @@
     };
   };
 
-  # Enable XWayland
-  # programs.xwayland.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tianshu = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  };
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    mg
-    git
-    wget
-    tmux
-    btop-cuda
-    podman-tui
-    podman-compose
-  ];
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
   services.ollama = {
     enable = true;
     package = pkgs.ollama-cuda;
     host = "[::]";
-  };
-
-  fonts.packages = with pkgs; [
-    font-awesome
-    noto-fonts
-    nerd-fonts.arimo
-    wqy_microhei
-    iosevka
-    hack-font
-    lmodern
-    ultimate-oldschool-pc-font-pack
-    nerd-fonts.bigblue-terminal
-    nerd-fonts.zed-mono
-    nerd-fonts.gohufont
-    nerd-fonts.terminess-ttf
-    dina-font
-  ];
-
-  virtualisation.containers.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
   };
 
   # Enable the OpenSSH daemon.
@@ -176,36 +79,6 @@
       X11Forwarding = false;
     };
   };
-
-  # Nekoray VPN
-  programs.throne = {
-    enable = true;
-    tunMode.enable = true;
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  programs.labwc = {
-    enable = true;
-  };
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
-
-  programs.steam = {
-    enable = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
-
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;
   hardware.graphics.extraPackages = with pkgs; [ rocmPackages.clr.icd ];
@@ -214,11 +87,6 @@
     "amdgpu"
     "nvidia"
   ];
-
-  qt = {
-    enable = true;
-    style = "kvantum";
-  };
 
   hardware.nvidia = {
     open = true;
@@ -233,17 +101,9 @@
     };
   };
 
-  services.guix.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
   # Enable QMK
-  hardware.keyboard.qmk.enable = true;
-  services.udev.packages = with pkgs; [ via ];
+  # hardware.keyboard.qmk.enable = true;
+  # services.udev.packages = with pkgs; [ via ];
 
   # Increase ulimit
   security.pam.loginLimits = [{

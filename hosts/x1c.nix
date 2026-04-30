@@ -12,66 +12,12 @@
       ../cachix.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   networking.hostName = "x1c"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  # Set your time zone.
-  time.timeZone = "Asia/Shanghai";
+  environment.systemPackages = with pkgs; [
+    btop
+  ];
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.inputMethod = {
-    type = "fcitx5";
-    enable = true;
-    fcitx5.waylandFrontend = true;
-    fcitx5.addons = with pkgs; [
-      rime-data
-      fcitx5-rime
-      fcitx5-gtk
-    ];
-  };
-
-  documentation = {
-    dev.enable = true;
-  };
-
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
-
-  console.useXkbConfig = true;
-
-  # services.xserver = {
-  #   enable = true;
-  #   desktopManager.lxqt.enable = true;
-  # };
-
-  # services = {
-  #   displayManager.ly.enable = true;
-  # };
-
-  # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "dvp";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -83,87 +29,9 @@
   powerManagement.powertop.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users = {
-    tianshu = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "podman" ];
-    };
-    amal = {
-      isNormalUser = true;
-      extraGroups = [ "wheel" "podman" ];
-    };
-  };
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    mg
-    git
-    wget
-    tmux
-    btop
-    podman-compose
-  ];
-
-  qt = {
-    enable = true;
-    style = "kvantum";
-  };
-
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
-
-  fonts.packages = with pkgs; [
-    font-awesome
-    noto-fonts
-    nerd-fonts.arimo
-    wqy_microhei
-    inconsolata
-    iosevka
-    departure-mono
-    fira-code
-    meslo-lg
-    nerd-fonts.bigblue-terminal
-    fixedsys-excelsior
-  ];
-
-  virtualisation.containers.enable = true;
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
-  };
-  virtualisation.containers.registries.search = [
-    "docker.io"
-  ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Nekoray VPN
-  programs.throne = {
-    enable = true;
-    tunMode.enable = true;
-  };
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  programs.labwc = {
-    enable = true;
-  };
-
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
-  };
 
   hardware.graphics = {
     enable = true;
@@ -173,21 +41,7 @@
     ];
   };
 
-  programs.steam = {
-    enable = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-  };
-
   services.tlp.enable = true;
-
-  services.guix.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you

@@ -6,93 +6,17 @@
     home.homeDirectory = "/home/tianshu";
 
     home.packages = with pkgs; [
-      acpi
       alt-ergo
-      aria2
-      autoconf
-      automake
       blender
-      bluetui
-      chez
-      cmake
       cvc4
       drawio
-      emacs-pgtk
-      fastfetch
-      ffmpeg
-      file
-      firefox
-      foot
-      fuzzel
-      gcc
-      gdb
-      gh
-      git
-      gnum4
-      gnumake
-      grim
-      guile
-      guile.dev
-      guile.info
       hidapi
-      hmcl
       httrack
-      inetutils
       inkscape
-      iw
-      killall
-      libnotify
-      libreoffice-qt
-      libresprite
-      libtool
-      libwebp
-      lshw
-      schemesh
-      mako
-      man-pages
-      man-pages-posix
-      mg
-      mpv
       obs-studio
-      pass
-      pciutils
-      lxqt.pcmanfm-qt
-      pinfo
-      qpdfview
-      ripgrep
-      shared-mime-info
-      sigil
-      simple-http-server
-      slurp
-      solana-cli
-      sqlite
-      sqlitebrowser
-      tango-icon-theme
-      telegram-desktop
-      texliveMedium
-      time
-      tmux
-      tokei
-      tree
-      unzip
-      usb-modeswitch
-      usb-modeswitch-data
-      usbutils
-      util-linux
-      valgrind
-      waybar
-      wev
-      wget
       why3
-      wl-clipboard
-      wlr-randr
-      wtype
-      xeyes
       yt-dlp
-      zip
-      zip
-      swww
-      swappy
+      schemesh
     ];
 
     home.sessionVariables = {
