@@ -1,9 +1,9 @@
 { config, home-manager, pkgs, ... }:
 {
   home-manager.useUserPackages = true;
-  home-manager.users.tianshu = {
-    home.username = "tianshu";
-    home.homeDirectory = "/home/tianshu";
+  home-manager.users.amal = {
+    home.username = "amal";
+    home.homeDirectory = "/home/amal";
 
     home.packages = with pkgs; [
       acpi
@@ -122,10 +122,6 @@
     programs.git = {
       enable = true;
       settings = {
-        user = {
-          name = "DogLooksGood";
-          email = "doglooksgood@gmail.com";
-        };
         core = {
           excludesFile = "~/.gitignore_global";
         };

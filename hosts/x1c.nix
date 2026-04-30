@@ -8,16 +8,9 @@
   imports =
     [
       ../hardware-configuration/x1c.nix
+      ./base.nix
       ../cachix.nix
     ];
-
-  nix.settings = {
-    trusted-users = [ "root" "tianshu" ];
-    substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
-  };
-
-  # Enable flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -93,9 +86,15 @@
   services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.tianshu = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "podman" ]; # Enable ‘sudo’ for the user.
+  users.users = {
+    tianshu = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "podman" ];
+    };
+    amal = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "podman" ];
+    };
   };
 
   # List packages installed in system profile.
@@ -106,7 +105,6 @@
     wget
     tmux
     btop
-    podman-tui
     podman-compose
   ];
 

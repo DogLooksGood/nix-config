@@ -6,11 +6,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, emacs-overlay, ... }:
@@ -22,7 +17,6 @@
           android_sdk.accept_license = true;
         };
         overlays = [
-          emacs-overlay.overlays.emacs
           (final: prev: {
             schemesh = prev.callPackage ./drvs/schemesh.nix { };
           })
@@ -36,6 +30,7 @@
             home-manager.nixosModules.home-manager
             ./hosts/x1c.nix
             ./home/tianshu.nix
+            ./home/amal.nix
           ];
         };
 
@@ -45,6 +40,7 @@
             home-manager.nixosModules.home-manager
             ./hosts/desktop.nix
             ./home/tianshu.nix
+            ./home/amal.nix
           ];
         };
       };
