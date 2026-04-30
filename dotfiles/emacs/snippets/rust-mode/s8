@@ -1,5 +1,0 @@
-# -*- mode: rust-mode -*-
-# name: size_of_u8
-# key: s8
-# --
-size_of::<u8>()

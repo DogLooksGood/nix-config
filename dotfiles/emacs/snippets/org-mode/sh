@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: sh
-# key: sh
-# --
-#+begin_src sh :session *org-babel-shell* :async yes
-  $0
-#+end_src
