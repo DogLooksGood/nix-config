@@ -1,9 +1,15 @@
 {
   "layer": "top",
   "position": "bottom",
-  "modules-left": ["sway/scratchpad", "sway/workspaces", "sway/mode"],
+  "modules-left": ["custom/user", "sway/scratchpad", "sway/workspaces", "sway/mode"],
   "modules-center": ["sway/window"],
   "modules-right": ["bluetooth", "backlight", "pulseaudio", "network", "battery", "clock"],
+  "custom/user": {
+    "exec": "whoami",
+    "interval": 36000,
+    "format": " {} ",
+    "tooltip": false
+  },
   "sway/scratchpad": {
     "format": "{icon} {count}",
     "show-empty": false,

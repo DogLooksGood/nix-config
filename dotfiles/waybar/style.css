@@ -48,3 +48,9 @@
     border-width: 2px;
     border-color: white;
 }
+
+#custom-user {
+  color: #FFFFFF;
+  padding: 4px 4px;
+  font-weight: 600;
+}
