@@ -7,7 +7,7 @@
 
     home.packages = with pkgs; [
       drawio
-
+      typst
     ];
 
     home.sessionVariables = {
