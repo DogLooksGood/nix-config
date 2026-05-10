@@ -3,7 +3,8 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     trusted-users         = [ "root" "tianshu" "amal" ];
-    substituters          = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
+    substituters          = [ "https://mirrors.ustc.edu.cn/nix-channels/store"
+                              "https://cache.nixos.org" ];
   };
 
   # Use the systemd-boot EFI boot loader.
@@ -97,6 +98,7 @@
     automake
     chez
     cmake
+    distrobox
     fastfetch
     ffmpeg
     file
@@ -106,6 +108,7 @@
     guile
     guile.dev
     guile.info
+    host-spawn
     inetutils
     iw
     killall
@@ -146,6 +149,7 @@
     font-awesome
     noto-fonts
     nerd-fonts.arimo
+    lxgw-neoxihei
     wqy_microhei
     inconsolata
     iosevka
