@@ -17,6 +17,13 @@
   # Easiest to use and most distros use this by default.
   networking.networkmanager.enable = true;
 
+  networking.proxy = {
+    allProxy   = "http://localhost:2080";
+    httpProxy  = "http://localhost:2080";
+    httpsProxy = "http://localhost:2080";
+    noProxy    = "127.0.0.1,localhost,.localdomain,.cn";
+  };
+
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 

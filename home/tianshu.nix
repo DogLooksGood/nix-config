@@ -89,11 +89,8 @@
     ];
 
     home.sessionVariables = {
-      EDITOR = "emacs";
-      ALL_PROXY="http://127.0.0.1:2080";
-      HTTPS_PROXY="http://127.0.0.1:2080";
+      EDITOR = "emacsclient";
       use_proxy="on"; # for wget
-      https_proxy="http://127.0.0.1:2080";
       CHEZSCHEMELIBDIRS="${pkgs.chez-srfi}/lib/csv10.3-site";
     };
 
