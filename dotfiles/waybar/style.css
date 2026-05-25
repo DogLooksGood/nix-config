@@ -1,6 +1,7 @@
 * {
-    font-family: 'Iosevka', 'Font Awesome 6 Free';
+    font-family: 'Unifont', 'Font Awesome 6 Free';
     background-color: #000000;
+    font-size: 16px;
 }
 
 #clock {
@@ -14,17 +15,14 @@
 }
 
 #bluetooth, #clock, #battery, #network, #pulseaudio, #backlight {
-    font-size: 14px;
     color: white;
 }
 
 #window {
-    font-size: 14px;
     color: white;
 }
 
 #scratchpad {
-    font-size: 12px;
     color: white;
 }
 

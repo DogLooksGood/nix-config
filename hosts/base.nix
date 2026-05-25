@@ -128,6 +128,7 @@
     man-pages
     man-pages-posix
     mpv
+    ntp
     pass
     pciutils
     podman-compose
@@ -154,17 +155,10 @@
 
   fonts.packages = with pkgs; [
     font-awesome
-    noto-fonts
-    nerd-fonts.arimo
-    lxgw-neoxihei
-    wqy_microhei
-    inconsolata
-    iosevka
-    departure-mono
-    fira-code
-    meslo-lg
+    unifont
     nerd-fonts.bigblue-terminal
-    fixedsys-excelsior
+    lxgw-neoxihei
+    iosevka
   ];
 
   # Open ports in the firewall.

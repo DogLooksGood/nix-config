@@ -7,13 +7,14 @@
 
     home.packages = with pkgs; [
       drawio
+      git
+      slack
       typst
     ];
 
     home.sessionVariables = {
       EDITOR = "emacsclient";
       use_proxy = "on"; # for wget
-
     };
 
     gtk = {
@@ -29,10 +30,6 @@
       package = pkgs.xcursor-pro;
       size = 32;
       gtk.enable = true;
-    };
-
-    programs.git = {
-      enable = true;
     };
 
     programs = {

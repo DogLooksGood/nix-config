@@ -133,8 +133,6 @@
       bash = {
         enable = true;
         bashrcExtra = ''
-          PROMPT_COMMAND=__bash_prompt
-          source ${../dotfiles/bash/prompt.sh}
           source ${../dotfiles/bash/osc7_cwd.sh}
         '';
       };
