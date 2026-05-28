@@ -60,6 +60,7 @@
       shared-mime-info
       sigil
       simple-http-server
+      slack
       slurp
       sqlite
       sqlitebrowser
@@ -88,12 +89,6 @@
       swappy
     ];
 
-    home.sessionVariables = {
-      EDITOR = "emacsclient";
-      use_proxy="on"; # for wget
-      CHEZSCHEMELIBDIRS="${pkgs.chez-srfi}/lib/csv10.3-site";
-    };
-
     gtk = {
       gtk4.theme = null;
       enable = true;
@@ -101,6 +96,16 @@
         name = "Tango"; # The internal name of the theme
         package = pkgs.tango; # The Nix package containing it
       };
+    };
+
+    xdg.mimeApps.defaultApplications = {
+      "inode/directory" = "pcmanfm.desktop";
+    };
+
+    home.sessionVariables = {
+      EDITOR = "emacsclient";
+      use_proxy="on"; # for wget
+      CHEZSCHEMELIBDIRS="${pkgs.chez-srfi}/lib/csv10.3-site";
     };
 
     home.pointerCursor = {
