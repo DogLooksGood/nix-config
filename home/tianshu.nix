@@ -109,7 +109,7 @@
     };
 
     home.pointerCursor = {
-      name = "XCursor-Pro-Red";
+      name = "XCursor-Pro-Light";
       package = pkgs.xcursor-pro;
       size = 32;
       gtk.enable = true;
