@@ -10,7 +10,6 @@
       aria2
       autoconf
       automake
-      swww
       blender
       bluetui
       chez
@@ -143,7 +142,10 @@
       };
     };
 
-    programs.firefox.enable = true;
+    programs.firefox = {
+      configPath = ".mozilla/firefox";
+      enable = true;
+    };
 
     home.file = {
       ".config/zellij" = { source = ../dotfiles/zellij; };

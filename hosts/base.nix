@@ -90,10 +90,10 @@
     zip
     # desktop components
     acpi
+    awww
     grim
     mako
     slurp
-    swww
     swappy
     waybar
     wev
@@ -137,7 +137,6 @@
     shared-mime-info
     sigil
     simple-http-server
-    solana-cli
     sqlite
     sqlitebrowser
     tango-icon-theme

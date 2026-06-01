@@ -69,7 +69,7 @@ exec_always killall -s USR2 waybar
 exec_always killall -s HUP kanshi
 exec kanshi &
 exec waybar &
-exec swww-daemon &
+exec awww-daemon &
 
 input type:keyboard repeat_delay 200
 input type:keyboard repeat_rate 40
