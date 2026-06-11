@@ -10,6 +10,7 @@
       git
       slack
       typst
+      husky
     ];
 
     home.sessionVariables = {

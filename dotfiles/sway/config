@@ -102,3 +102,5 @@ client.unfocused        #333333 #222222 #ffffff #292d2e #222222
 client.urgent           #2f343a #900000 #ffffff #900000 #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
 client.background       #ffffff
+
+for_window [app_id="firefox" title=".*Extension:.*"] floating enable, resize set 420 650, move position center

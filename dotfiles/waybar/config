@@ -102,6 +102,7 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     },
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode"          : "year",
       "mode-mon-col"  : 3,
