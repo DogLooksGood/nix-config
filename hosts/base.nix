@@ -12,7 +12,8 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages;
+
 
   # Easiest to use and most distros use this by default.
   networking.networkmanager.enable = true;
@@ -186,9 +187,7 @@
 
   programs.throne = {
     enable = true;
-    tunMode.enable = true;
   };
-
 
   virtualisation.containers.enable = true;
   virtualisation.podman = {
@@ -211,6 +210,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  services.sing-box.enable = true;
 
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }

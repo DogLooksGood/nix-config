@@ -16,6 +16,7 @@
 
   environment.systemPackages = with pkgs; [
     btop
+    upower
   ];
 
   services.pipewire = {
@@ -28,7 +29,10 @@
 
   powerManagement.powertop.enable = true;
 
-  # Enable touchpad support (enabled default in most desktopManager).
+  boot.loader.systemd-boot.memtest86.enable = true;
+  boot.crashDump.enable = true;
+  # boot.blacklistedKernelModules = [ "xe" ];
+  # boot.kernelParams = [ "i915.force_probe=64a0" "acpi_backlight=native" ];
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
@@ -42,7 +46,7 @@
   };
 
   services.tlp.enable = true;
-
+  services.fwupd.enable = true;
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
   # accidentally delete configuration.nix.

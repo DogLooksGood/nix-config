@@ -8,6 +8,7 @@
     home.packages = with pkgs; [
       acpi
       aria2
+      android-tools
       autoconf
       automake
       blender
@@ -22,6 +23,7 @@
       firefox
       foot
       fuzzel
+      fwupd
       gcc
       gdb
       git
