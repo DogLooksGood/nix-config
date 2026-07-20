@@ -10,11 +10,9 @@ bindsym XF86AudioMute                 exec pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86MonBrightnessUp           exec brightnessctl set 2%+
 bindsym XF86MonBrightnessDown         exec brightnessctl set 2%-
 bindsym XF86SelectiveScreenshot       exec grim -g "$(slurp -d)" - | wl-copy
-bindsym Shift+XF86SelectiveScreenshot exec grim -g "$(slurp -d)" "~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg"
+bindsym $mod+XF86SelectiveScreenshot  exec grim -g "$(slurp -d)" ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%S).png 2>&1 > /tmp/grim.err
 bindsym Print                         exec grim - | wl-copy
-bindsym Shift+Print                   exec grim "~/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).jpg"
-bindsym $mod+Print                    exec grim -t jpeg -g "$(slurp -d)" - | wl-copy
-bindsym XF86Assistant                 exec bash fuzzel-pass
+bindsym $mod+Print                    exec grim ~/Screenshots/$(date +%Y-%m-%d_%H-%m-%S).png
 bindsym $mod+p                        exec bash fuzzel-pass
 
 bindsym $mod+q            kill
@@ -88,6 +86,10 @@ input "1278:22:HHKB-Studio2_Keyboard" {
 input "1278:22:HHKB-Studio1_Keyboard" {
   xkb_options "altwin:swap_alt_win"
 }
+input "1278:22:PFU_Limited_HHKB-Studio" {
+  xkb_options "altwin:swap_alt_win"
+}
+
 
 input type:keyboard {
   repeat_delay 200

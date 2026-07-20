@@ -134,6 +134,7 @@
     pciutils
     podman-compose
     lxqt.pcmanfm-qt
+    qrencode
     ripgrep
     shared-mime-info
     sigil
