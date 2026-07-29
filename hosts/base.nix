@@ -58,15 +58,24 @@
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "dvp";
 
+  # Define a group to share files.
+  # The shared directory is /srv/shared.
+  users.groups.shared = {};
+
+  systemd.tmpfiles.rules = [
+    "d /srv/shared 2770 root shared - -"
+    "A /srv/shared - - - - group:shared:rwx,default:group:shared:rwx"
+  ];
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users = {
     tianshu = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "podman" ];
+      extraGroups = [ "wheel" "podman" "shared" ];
     };
     amal = {
       isNormalUser = true;
-      extraGroups = [ "wheel" "podman" ];
+      extraGroups = [ "wheel" "podman" "shared" ];
     };
   };
 
@@ -210,6 +219,8 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+
+  services.power-profiles-daemon.enable = true;
 
   services.sing-box.enable = true;
 
