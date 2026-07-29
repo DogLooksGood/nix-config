@@ -5,13 +5,13 @@
 }
 
 #clock {
-    margin-left: 4px;
+    margin-left: 8px;
     margin-right: 2px;
 }
 
 #bluetooth, #battery, #network, #pulseaudio, #backlight {
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 #bluetooth, #clock, #battery, #network, #pulseaudio, #backlight {
