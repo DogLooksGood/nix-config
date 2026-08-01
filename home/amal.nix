@@ -6,11 +6,12 @@
     home.homeDirectory = "/home/amal";
 
     home.packages = with pkgs; [
-      drawio
       git
       slack
       typst
       husky
+      render-cli
+      postgresql
     ];
 
     home.sessionVariables = {

@@ -116,6 +116,7 @@
     chez
     cmake
     distrobox
+    drawio
     fastfetch
     ffmpeg
     file
@@ -148,6 +149,7 @@
     shared-mime-info
     sigil
     simple-http-server
+    schemesh
     sqlite
     sqlitebrowser
     tango-icon-theme
@@ -168,7 +170,10 @@
     unifont
     nerd-fonts.bigblue-terminal
     lxgw-neoxihei
+    lxgw-wenkai
     iosevka
+    lmodern
+    ultimate-oldschool-pc-font-pack
   ];
 
   # Open ports in the firewall.
