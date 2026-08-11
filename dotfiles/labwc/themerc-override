@@ -1,0 +1,22 @@
+border.width: 1
+
+# Active window (sway: focused)
+window.active.border.color: #4c7899
+window.active.title.bg.color: #285577
+window.active.label.text.color: #ffffff
+
+# Inactive window (sway: unfocused)
+window.inactive.border.color: #333333
+window.inactive.title.bg.color: #222222
+window.inactive.label.text.color: #888888
+
+# Titlebar buttons (blend into titlebar, sway has no buttons)
+window.active.button.unpressed.image.color: #ffffff
+window.active.button.hover.bg.color: #3c6a8a
+window.inactive.button.unpressed.image.color: #888888
+window.inactive.button.hover.bg.color: #333333
+
+# OSD / window switcher
+osd.bg.color: #222222
+osd.border.color: #4c7899
+osd.label.text.color: #ffffff
