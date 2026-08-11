@@ -13,10 +13,18 @@
   <theme>
     <name>carbon</name>
     <cornerRadius>0</cornerRadius>
-    <font name="Iosevka Extended" size="12" />
+    <font name="Unifont" size="16" />
   </theme>
 
-  <desktops number="5" />
+  <desktops number="5">
+    <names>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
+      <name>5</name>
+    </names>
+  </desktops>
 
   <keyboard>
     <repeatRate>40</repeatRate>
@@ -163,7 +171,8 @@
     </keybind>
   </keyboard>
 
-  <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
+  <windowSwitcher preview="yes" outlines="yes">
+    <osd show="yes" style="thumbnail" output="focused" />
     <fields>
       <field content="icon" width="5%" />
       <field content="desktop_entry_name" width="30%" />

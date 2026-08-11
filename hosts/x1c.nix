@@ -29,9 +29,17 @@
 
   powerManagement.powertop.enable = true;
 
-  boot.loader.systemd-boot.memtest86.enable = true;
-  boot.crashDump.enable = true;
-  # boot.blacklistedKernelModules = [ "xe" ];
+  # boot.loader.systemd-boot.memtest86.enable = true;
+  # boot.crashDump.enable = true;
+  boot.kernelParams = [
+    "pcie_aspm=off"
+    "i915.enable_psr=0"
+    "i915.enable_dc=0"
+    "i915.enable_guc=0"
+    "nvme_core.default_ps_max_latency_us=0"
+    "processor.max_cstate=1"
+  ];
+  boot.blacklistedKernelModules = [ "intel_ipu6" "intel_ipu6_isys" "intel_vsc" ];
   # boot.kernelParams = [ "i915.force_probe=64a0" "acpi_backlight=native" ];
 
   # Enable the OpenSSH daemon.

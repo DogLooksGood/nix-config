@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "position": "bottom",
-  "modules-left": ["custom/user", "sway/scratchpad", "sway/workspaces", "sway/mode"],
-  "modules-center": ["sway/window"],
+  "modules-left": ["custom/user", "sway/scratchpad", "sway/workspaces", "sway/mode", "ext/workspaces"],
+  "modules-center": ["sway/window", "wlr/taskbar"],
   "modules-right": ["bluetooth", "backlight", "pulseaudio", "network", "battery", "clock"],
   "custom/user": {
     "exec": "whoami",
@@ -57,6 +57,15 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "on-click": "minimize-raise",
+  },
+  "ext/workspaces": {
+    "format": "{name}",
+    "sort-by-number": true,
+    "on-click": "activate",
   },
   "battery": {
     "interval": 60,
