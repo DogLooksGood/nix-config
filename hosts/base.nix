@@ -100,7 +100,6 @@
     zip
     # desktop components
     acpi
-    awww
     grim
     mako
     slurp
@@ -152,6 +151,7 @@
     schemesh
     sqlite
     sqlitebrowser
+    stressapptest
     tango-icon-theme
     telegram-desktop
     texliveMedium
@@ -226,8 +226,6 @@
   services.libinput.enable = true;
 
   services.power-profiles-daemon.enable = true;
-
-  services.sing-box.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
