@@ -48,8 +48,8 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      intel-vaapi-driver
       vpl-gpu-rt
+      intel-media-driver
     ];
   };
 

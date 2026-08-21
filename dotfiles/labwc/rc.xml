@@ -48,6 +48,9 @@
     <keybind key="W-S-l">
       <action name="Reconfigure" />
     </keybind>
+    <keybind key="W-m">
+      <aciton name="Iconify" />
+    </keybind>
     <!-- Switching between workspaces -->
     <keybind key="W-ampersand">
       <action name="GotoDesktop" to="1" wrap="yes" />

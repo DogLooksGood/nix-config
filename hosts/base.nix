@@ -228,4 +228,32 @@
   services.power-profiles-daemon.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  # Keyboard configuration
+
+  services.keyd = {
+    enable = true;
+    keyboards = {
+      internal = {
+        ids = [ "0001:0001" ];
+        settings = {
+          main = {
+            capslock = "layer(control)";
+          };
+        };
+      };
+
+      hhkb = {
+        ids = [ "04fe:0016" ];
+        settings = {
+          main = {
+            rightalt  = "rightmeta";
+            rightmeta = "rightalt";
+            leftalt   = "leftmeta";
+            leftmeta  = "leftalt";
+          };
+        };
+      };
+    };
+  };
 }
