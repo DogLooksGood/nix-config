@@ -233,27 +233,36 @@
 
   services.keyd = {
     enable = true;
-    keyboards = {
-      internal = {
-        ids = [ "0001:0001" ];
-        settings = {
-          main = {
-            capslock = "layer(control)";
-          };
+    keyboards = let
+      defaultSettings = {
+        meta = {
+          x = "S-delete";
+          c = "C-insert";
+          v = "S-insert";
         };
       };
+    in
+      {
+        internal = {
+          ids = [ "0001:0001" ];
+          settings = {
+            main = {
+              capslock = "layer(control)";
+            };
+          } // defaultSettings;
+        };
 
-      hhkb = {
-        ids = [ "04fe:0016" ];
-        settings = {
-          main = {
-            rightalt  = "rightmeta";
-            rightmeta = "rightalt";
-            leftalt   = "leftmeta";
-            leftmeta  = "leftalt";
-          };
+        hhkb = {
+          ids = [ "04fe:0016" ];
+          settings = {
+            main = {
+              rightalt  = "rightmeta";
+              rightmeta = "rightalt";
+              leftalt   = "leftmeta";
+              leftmeta  = "leftalt";
+            };
+          } // defaultSettings;
         };
       };
-    };
   };
 }

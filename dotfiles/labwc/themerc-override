@@ -1,4 +1,4 @@
-border.width: 1
+border.width: 2
 
 # Active window (sway: focused)
 window.active.border.color: #4c7899
