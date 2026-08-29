@@ -64,7 +64,7 @@
   },
   "ext/workspaces": {
     "format": "{name}",
-    "sort-by-id": true,
+    "sort-by-name": true,
     "on-click": "activate",
   },
   "battery": {
